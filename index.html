@@ -1,27 +1,39 @@
 <!doctype html>
 <html lang="fa">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ذخیره مخاطب (vCard)</title>
-  <style>
-    body{font-family: sans-serif; padding:20px; max-width:560px; margin:auto}
-    label{display:block; margin-top:10px}
-    input, textarea{width:100%; padding:8px; box-sizing:border-box}
-    button{margin-top:12px; padding:10px 16px; cursor:pointer}
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ذخیره مخاطب با یک دکمه</title>
+<style>
+  body{font-family: sans-serif; padding:18px; max-width:640px; margin:auto}
+  label{display:block; margin-top:8px}
+  input{width:100%; padding:8px; box-sizing:border-box}
+  button{margin-top:12px; padding:12px 18px; cursor:pointer}
+  .note{margin-top:10px; color:#555}
+</style>
 </head>
 <body>
-  <h3>ساخت و ذخیره مخاطب (vCard)</h3>
+  <h3>ذخیرهٔ مخاطب — با یک دکمه</h3>
 
   <label>نام کامل
-    <input id="fullname" value="علیرضا خوش‌سیرت">
+    <input id="fn" value="علیرضا خوش‌سیرت">
+  </label>
+  <label>تلفن (با +98)
+    <input id="tel" value="+989120461042">
+  </label>
+  <label>ایمیل
+    <input id="email" value="example@domain.com">
   </label>
 
-  <label>نام (given)
-    <input id="given" value="علیرضا">
-  </label>
+  <button id="saveContact">ذخیره در مخاطبین گوشی</button>
 
-  <label>نام خانوادگی (family)
-    <input id="family" value="خوش‌سیرت">
-  </labe
+  <p class="note">
+    توجه: مرورگرها اجازهٔ «ذخیرهٔ بی‌صدا» ندارند — کاربر باید یک تأیید انجام دهد. روی برخی اندرویدها تجربهٔ اشتراک مستقیم بهتر است؛ روی آیفون (Safari) وقتی فایل vCard باز شود گزینهٔ "Add to Contacts" نمایش داده می‌شود.
+  </p>
+
+<script>
+function escapeV(s=''){ return String(s).replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;'); }
+
+function makeVCard({fn='', tel='', email=''}){
+  const lines = [
+    'BEGIN:VCARD',
