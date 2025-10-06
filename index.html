@@ -3,37 +3,36 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ذخیره مخاطب با یک دکمه</title>
-<style>
-  body{font-family: sans-serif; padding:18px; max-width:640px; margin:auto}
-  label{display:block; margin-top:8px}
-  input{width:100%; padding:8px; box-sizing:border-box}
-  button{margin-top:12px; padding:12px 18px; cursor:pointer}
-  .note{margin-top:10px; color:#555}
-</style>
+<title>ذخیره مخاطب</title>
 </head>
-<body>
-  <h3>ذخیرهٔ مخاطب — با یک دکمه</h3>
+<body style="font-family:sans-serif;text-align:center;margin-top:50px;">
+  <h2>ذخیره مخاطب</h2>
+  <button id="btn" style="padding:12px 20px;font-size:16px;">📇 ذخیره مخاطب</button>
 
-  <label>نام کامل
-    <input id="fn" value="علیرضا خوش‌سیرت">
-  </label>
-  <label>تلفن (با +98)
-    <input id="tel" value="+989120461042">
-  </label>
-  <label>ایمیل
-    <input id="email" value="example@domain.com">
-  </label>
+  <script>
+    document.getElementById("btn").addEventListener("click", () => {
+      const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:خوش‌سیرت;علیرضا;;;
+FN:علیرضا خوش‌سیرت
+TEL;TYPE=CELL:+989120461042
+ORG:نوشت‌افزار خوش‌سیرت
+NOTE:فروشگاه لوازم تحریر و خدمات چاپ
+END:VCARD`;
 
-  <button id="saveContact">ذخیره در مخاطبین گوشی</button>
-
-  <p class="note">
-    توجه: مرورگرها اجازهٔ «ذخیرهٔ بی‌صدا» ندارند — کاربر باید یک تأیید انجام دهد. روی برخی اندرویدها تجربهٔ اشتراک مستقیم بهتر است؛ روی آیفون (Safari) وقتی فایل vCard باز شود گزینهٔ "Add to Contacts" نمایش داده می‌شود.
-  </p>
-
-<script>
-function escapeV(s=''){ return String(s).replace(/\n/g,'\\n').replace(/,/g,'\\,').replace(/;/g,'\\;'); }
-
-function makeVCard({fn='', tel='', email=''}){
-  const lines = [
-    'BEGIN:VCARD',
+      const blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Alireza-Khoshseyrat.vcf";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+        a.remove();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
