@@ -1,38 +1,100 @@
 <!doctype html>
 <html lang="fa">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ذخیره مخاطب</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>ذخیره مخاطب با عکس</title>
+<style>
+  body{font-family: sans-serif; max-width:640px; margin:24px auto; padding:0 12px; direction:rtl}
+  label{display:block; margin-top:10px}
+  input, button, textarea{width:100%; padding:8px; box-sizing:border-box}
+  button{margin-top:12px}
+  .row{display:flex; gap:8px; align-items:center}
+  .thumb{width:72px; height:72px; object-fit:cover; border-radius:8px; border:1px solid #ccc}
+  .note{color:#666; font-size:0.9rem; margin-top:8px}
+</style>
 </head>
-<body style="font-family:sans-serif;text-align:center;margin-top:50px;">
-  <h2>ذخیره مخاطب</h2>
-  <button id="btn" style="padding:12px 20px;font-size:16px;">📇 ذخیره مخاطب</button>
+<body>
+  <h3>ساخت مخاطب با عکس</h3>
 
-  <script>
-    document.getElementById("btn").addEventListener("click", () => {
-      const vcard = 
-`BEGIN:VCARD
-VERSION:3.0
-N:خوش‌سیرت;علیرضا;;;
-FN:علیرضا خوش‌سیرت
-TEL;TYPE=CELL:+989120461042
-ORG:نوشت‌افزار خوش‌سیرت
-NOTE:فروشگاه لوازم تحریر و خدمات چاپ
-END:VCARD`;
+  <label>نام کامل
+    <input id="fn" value="علیرضا خوش‌سیرت">
+  </label>
 
-      const blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "Alireza-Khoshseyrat.vcf";
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(() => {
-        URL.revokeObjectURL(url);
-        a.remove();
-      }, 1000);
-    });
-  </script>
-</body>
-</html>
+  <label>تلفن (با +98)
+    <input id="tel" value="+989120461042">
+  </label>
+
+  <label>ایمیل
+    <input id="email" value="example@domain.com">
+  </label>
+
+  <label>انتخاب عکس مخاطب
+    <div class="row">
+      <input id="photoInput" type="file" accept="a1.jpeg">
+      <img id="thumb" class="thumb" alt="پیش‌نمایش" src="" style="display:none">
+    </div>
+  </label>
+
+  <button id="saveBtn">ذخیره مخاطب (با عکس)</button>
+
+  <p class="note">
+    توضیح: پس از زدن دکمه فایل vCard ساخته و دانلود/اشتراک گذاشته می‌شود. اگر در داخل اپ باز شده‌اید (مثلاً واتساپ)، صفحه را در مرورگر اصلی باز کنید.
+  </p>
+
+<script>
+/* ---------- تنظیمات فشرده‌سازی ---------- */
+const MAX_WIDTH = 800;        // حداکثر عرض تصویر
+const MAX_KB = 120;          // هدف حجم فایل (کیلوبایت)
+const MIME_TYPE = 'image/jpeg';
+
+/* ---------- کمک‌‌‌کننده‌ها ---------- */
+function readFileAsImage(file){
+  return new Promise((res, rej) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => { URL.revokeObjectURL(url); res(img); };
+    img.onerror = (e) => { URL.revokeObjectURL(url); rej(e); };
+    img.src = url;
+  });
+}
+
+function canvasToBlob(canvas, quality){
+  return new Promise(resolve => canvas.toBlob(resolve, MIME_TYPE, quality));
+}
+
+async function compressImageFile(file, maxWidth=MAX_WIDTH, targetKB=MAX_KB){
+  // خواندن تصویر
+  const img = await readFileAsImage(file);
+
+  // تعیین ابعاد جدید (حفظ نسبت)
+  let {width, height} = img;
+  if (width > maxWidth){
+    const ratio = maxWidth / width;
+    width = Math.round(width * ratio);
+    height = Math.round(height * ratio);
+  }
+
+  const canvas = document.createElement('canvas');
+  canvas.width = width;
+  canvas.height = height;
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(img, 0, 0, width, height);
+
+  // تلاش برای رسیدن به حجم هدف با کاهش کیفیت
+  let quality = 0.85;
+  let blob = await canvasToBlob(canvas, quality);
+  let kb = blob.size / 1024;
+
+  while (kb > targetKB && quality > 0.25){
+    quality -= 0.1;
+    blob = await canvasToBlob(canvas, quality);
+    kb = blob.size / 1024;
+  }
+
+  // اگر هنوز خیلی بزرگه، سعی کن بیشتر کوچک‌تر کنی با کاهش عرض
+  while (kb > targetKB && canvas.width > 300){
+    canvas.width = Math.round(canvas.width * 0.85);
+    canvas.height = Math.round(canvas.height * 0.85);
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    quality = Math.m
