@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>زعفران شاهین</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: 'Vazirmatn', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 30px 25px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  h1 {
+    font-size: 22px;
+    color: #b22222; /* قرمز زعفرانی */
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 6px 0;
+    color: #333;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #b22222;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #e33e3e;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>زعفران شاهین</h1>
+    <p>📞 09120550590</p>
+    <p>📞 09123307329</p>
+    <p>🌐 <a href="https://saffronshahin.ir" target="_blank">saffronshahin.ir</a></p>
+    <p>📷 اینستاگرام: @saffron_shahin</p>
+    <p>💬 ایتا: @mahsolat_ghayenat</p>
+    <p>🎥 روبیکا: @saffron335566</p>
+
+    <button id="saveBtn">📇 ذخیره مخاطب</button>
+  </div>
+
+  <script>
+    document.getElementById("saveBtn").addEventListener("click", () => {
+      const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+N:؛;زعفران شاهین;;;
+FN:زعفران شاهین
+ORG:زعفران شاهین
+TEL;TYPE=CELL:+989120550590
+TEL;TYPE=CELL:+989123307329
+URL:https://saffronshahin.ir
+NOTE:اینستاگرام: @saffron_shahin
+NOTE:ایتا: @mahsolat_ghayenat
+NOTE:روبیکا: @saffron335566
+NOTE:فروش و عرضه مستقیم زعفران اصل قائنات
+END:VCARD`;
+
+      const blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Saffron-Shahin.vcf";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+        a.remove();
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
