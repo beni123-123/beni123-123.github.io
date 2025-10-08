@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بازرگانی لشگری</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: 'Vazirmatn', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 30px 25px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  h1 {
+    font-size: 22px;
+    color: #b22222; /* قرمز شیک و رسمی */
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 16px;
+    color: #444;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 14px;
+    color: #333;
+    margin: 6px 0;
+  }
+
+  button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #b22222;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #e33e3e;
+    transform: scale(1.05);
+  }
+</style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>بازرگانی لشگری</h1>
+    <h2>واردات و پخش عمده لوازم آرایشی و بهداشتی از چین و دبی</h2>
+    <p>👤 مدیریت: شاهین لشگری</p>
+    <p>📞 09120969129</p>
+    <button id="saveBtn">📇 ذخیره مخاطب</button>
+  </div>
+
+  <script>
+    document.getElementById("saveBtn").addEventListener("click", () => {
+      const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+N:؛;بازرگانی لشگری;;;
+FN:بازرگانی لشگری
+ORG:بازرگانی لشگری
+TITLE:مدیریت: شاهین لشگری
+TEL;TYPE=CELL:+989120969129
+NOTE:واردات و پخش عمده لوازم آرایشی و بهداشتی از چین و دبی
+END:VCARD`;
+
+      const blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Lashgari-Trading.vcf";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+        a.remove();
+      }, 1000);
+    });
+  </script>
+
+</body>
+</html>
