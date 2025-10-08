@@ -3,101 +3,63 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>گروه تخصصی عایق پرگاس</title>
+<title>لاله حیدری | آموزش طراحی مزون‌دار</title>
 <style>
-  body {
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    font-family: 'Vazirmatn', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-  }
-
-  .card {
-    background-color: #f9f9f9;
-    border: 1px solid #e0e0e0;
-    border-radius: 15px;
-    padding: 30px 25px;
-    max-width: 400px;
-    width: 90%;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-
-  h1 {
-    font-size: 22px;
-    color: #005b96; /* آبی صنعتی */
-    margin-bottom: 10px;
-  }
-
-  h2 {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 15px;
-  }
-
-  p {
-    font-size: 14px;
-    color: #333;
-    margin: 6px 0;
-  }
-
-  button {
-    margin-top: 20px;
-    padding: 12px 25px;
-    font-size: 16px;
-    border: none;
-    border-radius: 10px;
-    background-color: #005b96;
-    color: #fff;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-
-  button:hover {
-    background-color: #007acc;
-    transform: scale(1.05);
-  }
+body{margin:0;padding:0;background:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.card{width:92%;max-width:400px;background:#fff;border-radius:12px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,0.06);text-align:center;color:#111}
+h1{margin:6px 0 10px;font-size:22px;color:#b22222}
+p{margin:6px 0;font-size:15px;color:#333;line-height:1.5}
+button{margin-top:16px;padding:12px 20px;font-size:16px;border:none;border-radius:10px;background:#b22222;color:#fff;cursor:pointer}
+button:hover{background:#e33e3e}
+.links{display:flex;justify-content:center;gap:10px;margin-top:12px;flex-wrap:wrap}
+.links a{background:#f3f3f3;padding:8px 12px;border-radius:8px;text-decoration:none;color:#005b96;font-size:14px;border:1px solid #e6e6e6}
+.links a:hover{text-decoration:underline}
 </style>
 </head>
 <body>
 
-  <div class="card">
-    <h1>گروه تخصصی آب‌بندی و عایق پرگاس</h1>
-    <h2>مدیریت: آقای داوودی</h2>
-    <p>📞 09112004304</p>
-    <button id="saveBtn">📇 ذخیره مخاطب</button>
+<div class="card">
+  <h1>لاله حیدری</h1>
+  <p>آموزش طراحی مزون‌دار</p>
+  <p>خلق استایل و کسب‌وکار منحصر به فرد</p>
+  <p>اینجا درآمدت رو 3 برابر کن!</p>
+  <p>میخوای متفاوت و حرفه‌ای دیده بشی؟ همین حالا شروع کن!</p>
+  <p>📞 09116650634</p>
+
+  <div class="links">
+    <a href="https://www.instagram.com/lalehhadari.design" target="_blank">اینستاگرام</a>
   </div>
 
-  <script>
-    document.getElementById("saveBtn").addEventListener("click", () => {
-      const vcard =
+  <button id="saveBtn">📇 ذخیره مخاطب</button>
+</div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  const vcard = 
 `BEGIN:VCARD
 VERSION:3.0
-N:؛;گروه تخصصی آب‌بندی و عایق پرگاس;;;
-FN:گروه تخصصی آب‌بندی و عایق پرگاس
-ORG:گروه تخصصی آب‌بندی و عایق پرگاس
-TITLE:مدیریت: آقای داوودی
-TEL;TYPE=CELL:+989112004304
-NOTE:اجرای تخصصی عایق‌کاری، آب‌بندی و ترمیم سازه‌ها
+N:حیدری;لاله;;;
+FN:لاله حیدری
+ORG:آموزش طراحی مزون‌دار
+TITLE:آموزش طراحی مزون‌دار
+TEL;TYPE=CELL:+989116650634
+URL:https://www.instagram.com/lalehhadari.design
+NOTE:خلق استایل و کسب‌وکار منحصر به فرد. درآمدت رو 3 برابر کن!
 END:VCARD`;
 
-      const blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "Pergas-Group.vcf";
-      document.body.appendChild(a);
-      a.click();
-      setTimeout(() => {
-        URL.revokeObjectURL(url);
-        a.remove();
-      }, 1000);
-    });
-  </script>
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'LalehHeydari.vcf';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+  },1000);
+});
+</script>
 
 </body>
 </html>
