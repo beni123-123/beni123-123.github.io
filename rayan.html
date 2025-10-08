@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>فروشگاه رایان پخش</title>
+<style>
+body{margin:0;padding:0;background:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.card{width:92%;max-width:420px;background:#fff;border-radius:12px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,0.06);text-align:right;color:#111;line-height:1.6}
+h1{margin:6px 0 10px;font-size:22px;color:#b22222;text-align:center}
+p{margin:6px 0;font-size:15px;color:#333}
+button{margin-top:16px;padding:12px 20px;font-size:16px;border:none;border-radius:10px;background:#b22222;color:#fff;cursor:pointer}
+button:hover{background:#e33e3e}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>مسعود همتی | فروشگاه رایان پخش</h1>
+
+  <p>📍 تهران، ونک، ملاصدرا، خیابان شیرازی جنوبی، کوچه لاله، پلاک ۲۵، پاساژ بهنام، واحد ۱۳، همکف</p>
+  <p>📞 02188048770 | 02188059687 | 09120306276</p>
+  <p>📝 عرضه کننده محصولات بهداشتی اروپایی</p>
+
+  <button id="saveBtn">📇 ذخیره مخاطب</button>
+</div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:همتی;مسعود;;;
+FN:مسعود همتی
+ORG:فروشگاه رایان پخش
+TEL;TYPE=WORK,VOICE:+982188048770
+TEL;TYPE=WORK,VOICE:+982188059687
+TEL;TYPE=CELL:+989120306276
+ADR;TYPE=WORK:;;تهران، ونک، ملاصدرا، خیابان شیرازی جنوبی، کوچه لاله، پلاک ۲۵، پاساژ بهنام، واحد ۱۳;تهران;;;;
+NOTE:عرضه کننده محصولات بهداشتی اروپایی
+END:VCARD`;
+
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'RayanPakhsh.vcf';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+  },1000);
+});
+</script>
+
+</body>
+</html>
