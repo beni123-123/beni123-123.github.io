@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>آموزشگاه مهراندیش</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: 'Vazirmatn', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 30px 25px;
+    max-width: 450px;
+    width: 90%;
+    text-align: right;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 22px;
+    color: #2a52be; /* آبی رسمی */
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 4px 0;
+    color: #333;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #2a52be;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #4169e1;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>آموزشگاه هوشمندکارگاهی مهراندیش</h1>
+
+  <p><strong>مرکز اصلی:</strong> رشت، گلسار، خیابان ۸۷، پلاک ۲۰</p>
+  <p>📞 ۰۱۳۳۲۱۲۶۸۱۶ | ۰۹۱۱۶۰۰۸۰۹۷</p>
+
+  <p><strong>پیش‌دبستان و دبستان - شعبه ۱:</strong> گلسار، بلوار دیلمان، خیابان شیرخانی، کوچه بهاران</p>
+  <p>📞 ۰۱۳۳۳۷۳۸۰۰۹ | ۰۹۱۱۴۳۵۲۲۴۵</p>
+
+  <p><strong>شعبه ۲:</strong> خیابان ولیعصر، کوی کشاورز، پلاک ۴۶</p>
+  <p>📞 ۰۱۳۳۳۳۶۳۷۸۲</p>
+
+  <p><strong>دبیرستان:</strong> چهارراه گلسار، کوچه عسگری، بن‌بست مریم</p>
+  <p>📞 ۰۹۱۱۹۸۳۵۷۰۱ | ۰۱۳۳۲۱۱۰۶۳۲ | ۰۱۳۳۲۱۱۰۸۸۰</p>
+
+  <button id="saveBtn">📇 ذخیره مخاطب</button>
+</div>
+
+<script>
+document.getElementById("saveBtn").addEventListener("click", () => {
+  const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+N:؛;هوشمندکارگاهی مهراندیش;;;
+FN:هوشمندکارگاهی مهراندیش
+ORG:آموزشگاه هوشمندکارگاهی مهراندیش
+TEL;TYPE=CELL:+981332126816
+TEL;TYPE=CELL:+989116008097
+TEL;TYPE=CELL:+981333738009
+TEL;TYPE=CELL:+989114352245
+TEL;TYPE=CELL:+981333363782
+TEL;TYPE=CELL:+989119835701
+TEL;TYPE=CELL:+981332110632
+TEL;TYPE=CELL:+981332110880
+ADR;TYPE=WORK:;;رشت، گلسار، خیابان ۸۷، پلاک ۲۰;;;;
+NOTE:مرکز آموزشی پیش‌دبستان و دبستان و دبیرستان، شعبه‌ها و اطلاعات تماس کامل
+END:VCARD`;
+
+  const blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "Mehrandish-School.vcf";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+  }, 1000);
+});
+</script>
+
+</body>
+</html>
