@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>آراد پک سنتر</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    font-family: 'Vazirmatn', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 30px 25px;
+    max-width: 400px;
+    width: 90%;
+    text-align: right;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 22px;
+    color: #b22222;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 4px 0;
+    color: #333;
+  }
+
+  a {
+    color: #005b96;
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  button {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    background-color: #b22222;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background-color: #e33e3e;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>مجتمع چاپ و بسته‌بندی آراد پک سنتر</h1>
+
+  <p>📞 021-88394570 | 021-88394596</p>
+  <p>📱 09122241372 | 09904222214</p>
+  <p>🌐 سایت: <a href="https://www.aradpackcenter.com" target="_blank">aradpackcenter.com</a></p>
+  <p>📷 اینستاگرام: <a href="https://www.instagram.com/aradpackcenter" target="_blank">@aradpackcenter</a></p>
+  <p>📝 ارائه خدمات چاپ و بسته‌بندی شامل لیبل رولی، جعبه مقوایی، لمینتی و کارتن</p>
+
+  <button id="saveBtn">📇 ذخیره مخاطب</button>
+</div>
+
+<script>
+document.getElementById("saveBtn").addEventListener("click", () => {
+  const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+N:؛;آراد پک سنتر;;;
+FN:آراد پک سنتر
+ORG:مجتمع چاپ و بسته‌بندی آراد پک سنتر
+TEL;TYPE=WORK,VOICE:+982188394570
+TEL;TYPE=WORK,VOICE:+982188394596
+TEL;TYPE=CELL:+989122241372
+TEL;TYPE=CELL:+989904222214
+URL:https://www.aradpackcenter.com
+NOTE:خدمات چاپ و بسته‌بندی شامل لیبل رولی، جعبه مقوایی، لمینتی و کارتن
+NOTE:اینستاگرام: @aradpackcenter
+END:VCARD`;
+
+  const blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "AradPackCenter.vcf";
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+  }, 1000);
+});
+</script>
+
+</body>
+</html>
