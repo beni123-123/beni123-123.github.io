@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>فروشگاه لبخند</title>
+<style>
+  /* اگر فونت مروارید روی دستگاه نصب باشه نمایش داده میشه،
+     در غیر این صورت از Vazirmatn یا sans-serif استفاده میشه */
+  @font-face {
+    font-family: 'Mervarid';
+    /* اگر خواستی می‌تونم فایل فونت رو برات آماده کنم و این آدرس را به‌روزرسانی کنم */
+    src: local('Mervarid');
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    direction: rtl;
+    font-family: 'Mervarid', 'Vazirmatn', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  .card {
+    width: 92%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    text-align: center;
+    color: #111;
+  }
+
+  h1 {
+    margin: 6px 0 10px;
+    font-size: 22px;
+    color: #b22222; /* رنگ گرم برای نام فروشگاه */
+  }
+
+  p {
+    margin: 6px 0;
+    font-size: 15px;
+    color: #333;
+    line-height: 1.6;
+  }
+
+  .links {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .links a {
+    background: #f3f3f3;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #005b96;
+    font-size: 14px;
+    border: 1px solid #e6e6e6;
+  }
+
+  .action {
+    margin-top: 16px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+  }
+
+  button.save {
+    background: #b22222;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .call-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 6px;
+  }
+
+  .call-buttons a {
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    padding: 10px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+
+  small.note {
+    display:block;
+    margin-top:10px;
+    color:#666;
+    font-size:13px;
+  }
+</style>
+</head>
+<body>
+
+  <div class="card" role="region" aria-label="اطلاعات تماس فروشگاه لبخند">
+    <h1>فروشگاه لبخند</h1>
+
+    <p>👤 جواد عرب</p>
+
+    <div class="call-buttons" aria-hidden="false">
+      <a href="tel:+989125912512">📞 0912 59 12512</a>
+      <a href="tel:+982136035218">📞 021 3603 5218</a>
+    </div>
+
+    <div class="links" aria-hidden="false">
+      <a href="https://Rubika.ir/Labkhandmarket" target="_blank" rel="noopener">روبیکا</a>
+      <a href="https://eitaa.com/Labkhandmarket" target="_blank" rel="noopener">ایتا</a>
+    </div>
+
+    <div class="action">
+      <button class="save" id="saveBtn">📇 ذخیره مخاطب</button>
+    </div>
+
+  </div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  const vcard =
+`BE
