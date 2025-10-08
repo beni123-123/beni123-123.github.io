@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ذخیره مخاطب</title>
+</head>
+<body style="font-family:sans-serif;text-align:center;margin-top:50px;background:#fff;">
+  <h2>📇 ذخیره مخاطب</h2>
+  <button id="btn" style="padding:12px 24px;font-size:16px;cursor:pointer;">ذخیره مخاطب</button>
+
+  <script>
+    document.getElementById("btn").addEventListener("click", () => {
+
+      const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+N:؛;پنجره صنعت نور;;;
+FN:پنجره صنعت نور
+ORG:پنجره صنعت نور
+TEL;TYPE=CELL:+989123668270
+ADR;TYPE=WORK:;;کرج، سه راه فردیس، بلوار مپنا، شهرک صنعتی نور، نور یک غربی پلاک ۱۰;;;;
+URL:https://noorwindow.ir
+NOTE:تولیدکننده درب و پنجره‌های UPVC و آلومینیومی صنعتی و ساختمانی
+END:VCARD`;
+
+      const blob = new Blob([vcard], {type: "text/vcard;charset=utf-8"});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "Panjeresanat-Noor.vcf";
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        URL.revokeObjectURL(url);
+        a.remove();
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
