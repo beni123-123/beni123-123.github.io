@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>کالای برق طاها</title>
+<style>
+body{margin:0;padding:0;background:#fff;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh}
+.card{width:92%;max-width:400px;background:#fff;border-radius:12px;padding:22px;box-shadow:0 6px 18px rgba(0,0,0,0.06);text-align:center;color:#111}
+h1{margin:6px 0 10px;font-size:22px;color:#b22222}
+p{margin:6px 0;font-size:15px;color:#333;line-height:1.6}
+button{margin-top:16px;padding:12px 20px;font-size:16px;border:none;border-radius:10px;background:#b22222;color:#fff;cursor:pointer}
+button:hover{background:#e33e3e}
+a{color:#005b96;text-decoration:none;word-break:break-all;}
+a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>کالای برق طاها</h1>
+  <p>📍 اهواز، خیابان طالقانی، کوچه معمارزاده، بین شریعتی و مسلم</p>
+  <p>📞 06132202669</p>
+  <p>🌐 <a href="https://barghtahaa.com/" target="_blank">barghtahaa.com</a></p>
+  <p>🆔 <a href="https://t.me/kalabargh_taha" target="_blank">t.me/kalabargh_taha</a></p>
+  <p>📱 <a href="https://www.instagram.com/electrotahaa" target="_blank">instagram.com/electrotahaa</a></p>
+  <button id="saveBtn">📇 ذخیره مخاطب</button>
+</div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  const vcard =
+`BEGIN:VCARD
+VERSION:3.0
+N:;;کالای برق طاها;;
+FN:کالای برق طاها
+ORG:کالای برق طاها
+ADR;TYPE=WORK:;;اهواز، خیابان طالقانی، کوچه معمارزاده، بین شریعتی و مسلم;;;;
+TEL;TYPE=WORK:+986132202669
+URL;TYPE=Website:https://barghtahaa.com/
+URL;TYPE=Telegram:https://t.me/kalabargh_taha
+URL;TYPE=Instagram:https://www.instagram.com/electrotahaa
+END:VCARD`;
+
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'TahaElectric.vcf';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+  },1000);
+});
+</script>
+
+</body>
+</html>
