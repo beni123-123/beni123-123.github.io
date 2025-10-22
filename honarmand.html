@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>مارال هنرمند | گالری طلای هنرمند</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* استایل‌های پایه */
+body{
+    margin:0;
+    padding:0;
+    background:#fafafa;
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: rtl; /* جهت کلی صفحه به راست‌چین */
+    text-align: right; 
+}
+/* کارت اصلی (با استایل طلایی و شیک) */
+.card{
+    width:92%;
+    max-width:400px;
+    background:#fff;
+    border-radius:20px;
+    padding:30px 25px;
+    box-shadow:0 8px 25px rgba(0,0,0,0.1);
+    border: 1px solid #ffcc00; /* حاشیه طلایی کم‌رنگ */
+    text-align: right;
+    color:#333;
+}
+/* عنوان اصلی */
+h1{margin:0 0 5px;font-size:26px;color:#b8860b;text-align: center;} /* رنگ طلایی */
+/* زیر عنوان (نام گالری) */
+h2{margin:0 0 20px;font-size:18px;color:#555;font-weight:400;text-align: center;} 
+/* پاراگراف‌ها و متن‌های توضیحی */
+p{margin:8px 0;font-size:16px;color:#444;line-height:1.6;padding:0 5px;}
+.contact-info{margin-top:20px;padding:10px;border-top:1px dashed #eee;text-align: center;}
+.contact-info p{font-size:17px;font-weight:bold;color:#111;}
+/* برای شماره تلفن که چپ‌چین است */
+.phone-number{direction: ltr; display: inline-block; font-size: 18px; font-weight: bold; color: #b8860b;}
+
+/* قسمت لینک‌ها و دکمه‌ها */
+.action-links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
+.action-links a, .action-links button{
+    padding:14px;
+    font-size:16px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    text-decoration:none;
+    transition:all 0.3s;
+    font-weight:bold;
+    text-align: center;
+    font-family:'Vazirmatn', sans-serif;
+}
+
+/* استایل لینک‌های اصلی (طلایی) */
+.main-link{background:#ffcc00;color:#333;box-shadow: 0 2px 4px rgba(0,0,0,0.1);}
+.main-link:hover{background:#e6b800;}
+/* استایل لینک‌های ثانویه */
+.secondary-link{background:#f0f0f0;color:#555;border: 1px solid #ddd;}
+.secondary-link:hover{background:#e0e0e0;}
+
+/* دکمه ذخیره مخاطب */
+#saveBtn{
+    margin-top:25px;
+    padding:16px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:#333; /* زمینه مشکی */
+    color:#ffcc00; /* متن طلایی */
+    cursor:pointer;
+    width:100%;
+    transition:background 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+#saveBtn:hover{background:#555;}
+
+.address-box{
+    margin-top:15px;
+    padding:12px;
+    background:#fff8e1; /* زمینه کرم طلایی */
+    border-radius:10px;
+    border: 1px solid #ffe082;
+    text-align: right;
+    font-size: 15px;
+}
+.address-box strong{color:#b8860b; display: block; margin-bottom: 5px;}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>مارال هنرمند</h1>
+  <h2>گالری طلای هنرمند</h2>
+  
+  <div class="contact-info">
+    <p>📱 تماس مستقیم: <span class="phone-number">0912 014 4348</span></p>
+  </div>
+  
+  <div class="address-box">
+      <strong>آدرس گالری:</strong>
+      صادقیه، پاساژ زرناب، طبقه منفی ۱، واحد B20
+  </div>
+
+  <div class="action-links">
+    <a href="tel:+989120144348" class="main-link">📞 تماس</a>
+    <a href="https://www.instagram.com/Honarmandgold2024" target="_blank" class="main-link">📸 اینستاگرام</a>
+    
+    <a href="https://t.me/+M6m3h0R525dlM2U0" target="_blank" class="secondary-link">تلگرام</a>
+    <a href="https://www.google.com/maps?q=35.72193145751953,51.33871078491211&z=17&hl=fa" target="_blank" class="secondary-link">📍 لوکیشن گالری</a>
+  </div>
+
+  <button id="saveBtn">📇 ذخیره مخاطب</button>
+</div>
+
+<script>
+// تابع ذخیره مخاطب در گوشی
+document.getElementById('saveBtn').addEventListener('click', () => {
+  // ساختار vCard
+  const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:هنرمند;مارال;;;
+FN:مارال هنرمند
+ORG:گالری طلای هنرمند
+TITLE:طلا و جواهر
+TEL;TYPE=CELL:+989120144348
+URL;TYPE=INSTAGRAM:https://www.instagram.com/Honarmandgold2024
+URL;TYPE=TELEGRAM:https://t.me/+M6m3h0R525dlM2U0
+ADR;TYPE=WORK;CHARSET=UTF-8:;;پاساژ زرناب طبقه -۱ واحد B20;صادقیه;تهران;;ایران
+NOTE;CHARSET=UTF-8:گالری طلای هنرمند.
+END:VCARD`;
+
+  // ایجاد و دانلود فایل VCF
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'MaralHonarmand_Gold.vcf';
+  document.body.appendChild(a);
+  a.click();
+  
+  // پاکسازی منابع
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+    alert('مخاطب با موفقیت ذخیره شد!');
+  },1000);
+});
+</script>
+
+</body>
+</html>
