@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>بازرگانی برازنده | حسین برازنده | ملزومات ساختمانی</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* استایل‌های پایه */
+body{
+    margin:0;
+    padding:0;
+    background:#002b5c; /* زمینه آبی تیره/سرمه‌ای */
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: rtl; 
+    text-align: right; 
+}
+/* کارت اصلی */
+.card{
+    width:92%;
+    max-width:420px;
+    background:#fff; /* زمینه سفید کارت */
+    border-radius:20px;
+    padding:30px 25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    border-top: 5px solid #d91d21; /* نوار قرمز */
+    text-align: right;
+    color:#333;
+    /* بخش‌های مربوط به لوگو حذف شده‌اند */
+}
+
+/* عنوان اصلی */
+h1{margin:0 0 5px;font-size:26px;color:#002b5c;text-align: center;font-weight: 700;} /* آبی تیره */
+/* زیرعنوان/بیزینس */
+h2{margin:0 0 15px;font-size:18px;color:#d91d21;font-weight:500;text-align: center;} /* قرمز */
+
+/* کادر اطلاعات تماس */
+.contact-group {
+    margin-top: 25px; /* افزایش فاصله بالا پس از حذف لوگو */
+    padding: 15px;
+    background: #f0f4f8; /* زمینه سفید متمایل به آبی خیلی روشن */
+    border-radius: 12px;
+    border: 1px solid #e0e7ee;
+}
+.contact-item {
+    padding: 6px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dotted #e0e7ee;
+}
+.contact-item:last-child {
+    border-bottom: none;
+}
+.contact-person {
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+}
+/* برای شماره تلفن (جهت ltr) */
+.phone-number, .email-text, .website-text {
+    direction: ltr; 
+    font-weight: bold; 
+    color: #002b5c; /* آبی تیره */
+    text-decoration: none;
+    font-size: 15px;
+}
+.phone-number:hover, .email-text:hover, .website-text:hover {
+    text-decoration: underline;
+}
+
+/* شعار برند */
+.slogan{
+    text-align: center;
+    padding: 10px;
+    margin: 15px 0;
+    font-style: italic;
+    font-weight: 600;
+    color: #d91d21; /* قرمز برای جلب توجه شعار */
+    border: 1px dashed #d91d21;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+/* لیست نمایندگی‌ها */
+.agency-list {
+    margin-top: 20px;
+}
+.agency-list h3 {
+    font-size: 16px;
+    color: #002b5c; /* آبی تیره */
+    margin-bottom: 8px;
+    border-bottom: 2px solid #d91d21; /* خط قرمز */
+    display: inline-block;
+    padding-bottom: 3px;
+}
+.agency-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.agency-list li {
+    padding: 5px 0;
+    font-size: 14px;
+    color: #555;
+    position: relative;
+    padding-right: 15px;
+}
+.agency-list li::before {
+    content: "•";
+    position: absolute;
+    right: 0;
+    color: #d91d21; /* قرمز برای نقاط لیست */
+    font-weight: bold;
+}
+
+/* قسمت لینک‌های ارتباطی */
+.social-links{display:grid;grid-template-columns: repeat(3, 1fr);gap:8px;margin-top:20px;}
+.social-links a{
+    padding:10px 5px;
+    font-size:14px;
+    border-radius:8px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+    background: #002b5c; /* آبی تیره */
+}
+.social-links a:hover{background:#001e40;} /* آبی تیره تر در هاور */
+
+/* دکمه اصلی (ذخیره مخاطب) */
+#saveBtn{
+    margin-top:25px;
+    padding:16px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:#d91d21; /* قرمز */
+    color:#fff;
+    cursor:pointer;
+    width:100%;
+    font-weight: 700;
+    transition:background 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+#saveBtn:hover{background:#b6191c;} /* قرمز تیره تر در هاور */
+
+/* آدرس‌ها */
+.address-box {
+    margin-top: 15px;
+    padding: 10px;
+    background: #f0f4f8; /* زمینه سفید متمایل به آبی خیلی روشن */
+    border-radius: 8px;
+    border-right: 4px solid #d91d21; /* نوار قرمز */
+}
+.address-box strong {
+    font-size: 15px;
+    color: #002b5c; /* آبی تیره */
+    display: block;
+    margin-bottom: 5px;
+}
+.address-box p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+    <h1>حسین برازنده</h1>
+    <h2>بازرگانی و پخش برازنده</h2>
+    
+    <div class="slogan">
+        💎 تلّو: زیورآلات ساختمانی 💎
+    </div>
+
+    <div class="contact-group">
+        <strong>📞 اطلاعات تماس و ایمیل:</strong>
+        
+        <div class="contact-item">
+            <span class="contact-person">مدیریت (حسین برازنده)</span>
+            <a href="tel:+989122649473" class="phone-number">0912 264 9473</a>
+        </div>
+        <div class="contact-item">
+            <span class="contact-person">مسئول فروش (مصطفایی)</span>
+            <a href="tel:+989126620551" class="phone-number">0912 662 0551</a>
+        </div>
+        <div class="contact-item">
+            <span class="contact-person">دفتر مرکزی (فکس: ۷۳)</span>
+            <a href="tel:+982188627073" class="phone-number">021 8862 7073</a>
+        </div>
+        <div class="contact-item">
+            <span class="contact-person">تلفن دفتر (شماره آخر: ۷۹)</span>
+            <a href="tel:+982188627079" class="phone-number">021 8862 7079</a>
+        </div>
+        <div class="contact-item">
+            <span class="contact-person">ایمیل کاری</span>
+            <a href="mailto:bazargani.baarazandeh@gmail.com" class="email-text">bazargani.baarazandeh@gmail.com</a>
+        </div>
+        <div class="contact-item">
+            <span class="contact-person">وبسایت رسمی</span>
+            <a href="http://barazandeh.org" target="_blank" class="website-text">barazandeh.org</a>
+        </div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/bazargani.barazandeh" target="_blank">📸 اینستاگرام</a>
+      <a href="https://rubika.ir/bazarganibarazande" target="_blank">روبیکا</a>
+      <a href="https://ble.ir/bazargani.barazandeh" target="_blank">بله</a>
+      <a href="https://wa.me/989122649473" target="_blank">💬 واتساپ</a>
+      <a href="http://t.me/989122649473" target="_blank">تلگرام</a>
+      <a href="http://eitaa.com/989122649473" target="_blank">ایتا</a>
+    </div>
+    
+    <button id="saveBtn">📇 ذخیره مخاطب (حسین برازنده)</button>
+
+    <div class="agency-list">
+        <h3>نمایندگی‌ها و مالکیت برند:</h3>
+        <ul>
+            <li>صاحب و مالک برند **تلّو** (ملزومات بهداشتی ساختمانی)</li>
+            <li>نماینده رسمی چینی بهداشتی **ایساتیس** (تهران و البرز)</li>
+            <li>نماینده رسمی چینی بهداشتی **نوین سرام کویر** (کوریت)</li>
+            <li>نماینده رسمی شیرآلات **آرتین** با ۲۹ سال ضمانت کتبی</li>
+            <li>نماینده رسمی کابینت‌های روشویی: **آماتیس، اکوال، لیان**</li>
+            <li>نماینده رسمی چینی بهداشتی **باریش**</li>
+            <li>نماینده **فلاش تانک ایران** و **ایمن آب**</li>
+        </ul>
+    </div>
+
+    <div class="address-box">
+        <strong>آدرس دفتر مرکزی:</strong>
+        <p>تهران، میدان ونک، خیابان ملاصدرا، شیرازی جنوبی، گرمسار غربی، بازار سرامیک تهران (پلاک ۳۶و۳۶)، طبقه اول اداری واحد ۲</p>
+    </div>
+    
+    <div class="address-box" style="margin-top: 10px;">
+        <strong>آدرس انبار مرکزی:</strong>
+        <p>تهران، جاده شهریار، خادم آباد، خ ولیعصر، خ لاله ۱۴ غربی پلاک ۴</p>
+    </div>
+</div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  // ساختار vCard که تمامی اطلاعات را شامل می‌شود
+  const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:برازنده;حسین;;;
+FN:حسین برازنده - بازرگانی و پخش برازنده
+ORG:بازرگانی و پخش برازنده
+TITLE:مدیر بازرگانی و صاحب برند تلّو
+TEL;TYPE=CELL;TYPE=PREF:+989122649473
+TEL;TYPE=CELL:+989126620551 ; مصطفایی
+TEL;TYPE=WORK;TYPE=VOICE:+982188627073
+TEL;TYPE=WORK;TYPE=VOICE:+982188627079
+EMAIL;TYPE=WORK:bazargani.baarazandeh@gmail.com
+URL;TYPE=WEBSITE:http://barazandeh.org
+URL;TYPE=INSTAGRAM:https://www.instagram.com/bazargani.barazandeh
+URL;TYPE=RUBIKA:https://rubika.ir/bazarganibarazande
+URL;TYPE=BALE:https://ble.ir/bazargani.barazandeh
+URL;TYPE=WHATSAPP:https://wa.me/989122649473
+URL;TYPE=TELEGRAM:http://t.me/989122649473
+ADR;TYPE=WORK;CHARSET=UTF-8:;;بازار سرامیک تهران (پلاک ۳۶و۳۶)، ط۱ واحد ۲;تهران;خیابان ملاصدرا;ایران
+NOTE;CHARSET=UTF-8:صاحب و مالک برند تلّو - زیورآلات ساختمانی. نماینده رسمی ایساتیس، نوین سرام، آرتین، فلاش تانک ایران و ایمن آب.
+END:VCARD`;
+
+  // ایجاد و دانلود فایل VCF
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'BazarganiBarazandeh.vcf';
+  document.body.appendChild(a);
+  a.click();
+  
+  // پاکسازی منابع
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+    alert('مخاطب با موفقیت ذخیره شد!');
+  },1000);
+});
+</script>
+
+</body>
+</html>
