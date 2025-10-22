@@ -42,7 +42,7 @@ p{margin:8px 0;font-size:16px;color:#333;line-height:1.6;padding:0 5px;}
 .phone-number{direction: ltr; display: inline-block; font-size: 18px; font-weight: bold; color: #005b96;}
 
 /* قسمت لینک‌ها و دکمه‌ها */
-.links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;text-align: center;}
+.links{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px;text-align: center;} /* تغییر به ۱ ستون */
 .links a{
     padding:12px 10px;
     font-size:16px;
@@ -116,8 +116,7 @@ p{margin:8px 0;font-size:16px;color:#333;line-height:1.6;padding:0 5px;}
   </div>
 
   <div class="links">
-    <a href="http://www.parttland.com/" target="_blank">وبسایت رسمی</a>
-    <a href="http://partland.co/" target="_blank">اینستاگرام</a>
+    <a href="http://www.parttland.com/" target="_blank">🌐 ورود به وبسایت رسمی</a>
   </div>
 
   <button id="saveBtn">📇 ذخیره مخاطب (دفتر پارت لند)</button>
@@ -136,7 +135,6 @@ TITLE:طراحی، نظارت و اجرای پروژه‌های ساختمانی
 TEL;TYPE=WORK;TYPE=VOICE:+982144433616
 TEL;TYPE=WORK;TYPE=VOICE:+982144433617
 URL:http://www.parttland.com/
-URL;TYPE=INSTAGRAM:http://partland.co/
 NOTE:ساختن آینده‌ای پایدار.
 END:VCARD`;
 
@@ -145,7 +143,7 @@ END:VCARD`;
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'ParttLand_Office.vcf'; 
+  a.download = 'ParttLand_Office.vcf';
   document.body.appendChild(a);
   a.click();
   
