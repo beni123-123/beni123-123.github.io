@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>دکتر کاشت مو | ابوالفضل صباغیه</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* استایل‌های پایه */
+body{
+    margin:0;
+    padding:0;
+    background:#e8f4f8; /* زمینه روشن و آرامش‌بخش */
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: rtl; 
+    text-align: right; 
+}
+/* کارت اصلی */
+.card{
+    width:92%;
+    max-width:400px;
+    background:#fff;
+    border-radius:20px;
+    padding:30px 25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    border-top: 5px solid #2a9d8f; /* نوار رنگی مرتبط با سلامت/طبیعت */
+    text-align: right;
+    color:#333;
+}
+/* عنوان اصلی */
+h1{margin:0 0 5px;font-size:28px;color:#0077b6;text-align: center;font-weight: 700;} 
+/* زیرعنوان/تخصص */
+h2{margin:0 0 20px;font-size:18px;color:#2a9d8f;font-weight:500;text-align: center;} 
+/* پاراگراف‌های اطلاعات */
+p{margin:10px 0;font-size:16px;color:#444;line-height:1.6;}
+
+/* کادر اطلاعات تماس */
+.info-box {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f0f8ff;
+    border-radius: 12px;
+    border: 1px solid #cce5ff;
+}
+.info-box p {
+    margin: 5px 0;
+    font-size: 15px;
+    font-weight: 500;
+}
+.info-box strong {
+    color: #0077b6;
+    margin-left: 5px;
+}
+/* برای شماره تلفن و ایمیل (جهت ltr) */
+.ltr-text {direction: ltr; display: inline-block; font-weight: bold; color: #0077b6;}
+
+/* قسمت لینک‌های ارتباطی */
+.social-links{display:grid;grid-template-columns: repeat(3, 1fr);gap:10px;margin-top:20px;}
+.social-links a{
+    padding:10px;
+    font-size:15px;
+    border-radius:10px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+
+/* رنگ‌بندی شبکه‌های اجتماعی */
+.instagram{background:#E1306C;}
+.instagram:hover{background:#c12154;}
+.telegram{background:#0088cc;}
+.telegram:hover{background:#006aa0;}
+.whatsapp{background:#25D366;}
+.whatsapp:hover{background:#1da94b;}
+
+/* دکمه اصلی (ذخیره مخاطب) */
+#saveBtn{
+    margin-top:25px;
+    padding:16px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background:#2a9d8f; /* رنگ اصلی کلینیک */
+    color:#fff;
+    cursor:pointer;
+    width:100%;
+    font-weight: 700;
+    transition:background 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+#saveBtn:hover{background:#217a70;}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>ابوالفضل صباغیه</h1>
+  <h2>متخصص کاشت مو و زیبایی</h2>
+  
+  <p style="text-align: center; font-style: italic; color: #555;">(کاشت موی تضمینی در شیراز)</p>
+  
+  <div class="info-box">
+      <p>📞 <strong>تماس:</strong> <a href="tel:+989173577151" class="ltr-text">0917 357 7151</a></p>
+      <p>📧 <strong>ایمیل:</strong> <a href="mailto:abolfazlsabaghie@gmail.com" class="ltr-text">abolfazlsabaghie@gmail.com</a></p>
+      <p>📍 <strong>آدرس:</strong> شیراز، معالی آباد</p>
+      <p>🌐 <strong>وبسایت:</strong> <a href="https://inoti.com/iam/کاشت-مو-تضمینی-در-شیراز" target="_blank" style="color: #0077b6;">مشاهده خدمات</a></p>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.instagram.com/dr_kashtemoo" target="_blank" class="instagram">📸 اینستاگرام</a>
+    <a href="https://t.me/sm_arthair" target="_blank" class="telegram">✉️ تلگرام</a>
+    <a href="https://wa.me/989173577151" target="_blank" class="whatsapp">💬 واتساپ</a>
+  </div>
+  
+  <button id="saveBtn">📇 ذخیره مخاطب (دکتر کاشت مو)</button>
+</div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  // ساختار vCard که تمامی اطلاعات اندروید و آیفون را شامل می‌شود
+  const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:صباغیه;ابوالفضل;;;
+FN:دکتر کاشت مو - ابوالفضل صباغیه
+ORG:کلینیک کاشت مو
+TITLE:متخصص کاشت مو
+TEL;TYPE=CELL;TYPE=PREF:+989173577151
+EMAIL;TYPE=WORK:abolfazlsabaghie@gmail.com
+URL;TYPE=WEBSITE:https://inoti.com/iam/کاشت-مو-تضمینی-در-شیراز
+URL;TYPE=INSTAGRAM:https://www.instagram.com/dr_kashtemoo
+URL;TYPE=TELEGRAM:https://t.me/sm_arthair
+URL;TYPE=WHATSAPP:https://wa.me/989173577151
+ADR;TYPE=WORK;CHARSET=UTF-8:;;معالی آباد;;شیراز;فارس;ایران
+GEO:29.6253,52.4939 ; موقعیت تقریبی معالی آباد شیراز (برای لوکیشن)
+NOTE;CHARSET=UTF-8:کاشت موی تضمینی در شیراز.
+END:VCARD`;
+
+  // ایجاد و دانلود فایل VCF
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'DrSabaghie_Kashtemoo.vcf';
+  document.body.appendChild(a);
+  a.click();
+  
+  // پاکسازی منابع
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+    alert('مخاطب با موفقیت ذخیره شد!');
+  },1000);
+});
+</script>
+
+</body>
+</html>
