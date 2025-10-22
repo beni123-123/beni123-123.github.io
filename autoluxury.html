@@ -3,143 +3,215 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>محمد کسروی | پدرِ پخش (ملزومات آشپزخانه)</title>
+<title>اتولاکچری | محمد بیکی | فروش خودرو لوکس</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
 <style>
-/* استایل‌های پایه برای قرارگیری در مرکز صفحه */
+/* استایل‌های پایه */
 body{
     margin:0;
     padding:0;
-    background:#f8f8f8;
-    font-family:'Vazirmatn', sans-serif; /* اطمینان از استفاده از وزیرمتن */
+    background:#1a1a1a; /* زمینه تیره برای القای حس لوکس بودن */
+    font-family:'Vazirmatn', sans-serif;
     display:flex;
     align-items:center;
     justify-content:center;
     min-height:100vh;
-    direction: rtl; /* جهت کلی صفحه به راست‌چین */
-    text-align: right; /* تراز کردن متن‌ها به راست */
+    direction: rtl; 
+    text-align: right; 
 }
 /* کارت اصلی */
 .card{
     width:92%;
     max-width:420px;
     background:#fff;
-    border-radius:18px;
-    padding:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.1);
-    text-align: right; /* تراز کردن متن داخل کارت به راست */
-    color:#111;
+    border-radius:20px;
+    padding:30px 25px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.3);
+    border-bottom: 5px solid #ffcc00; /* نوار طلایی در پایین */
+    text-align: right;
+    color:#333;
 }
 /* عنوان اصلی */
-h1{margin:10px 0 5px;font-size:26px;color:#d9534f;text-align: center;} /* عنوان‌ها وسط‌چین بمانند */
-/* زیر عنوان (شعار) */
-h2{margin:5px 0 15px;font-size:18px;color:#5cb85c;font-weight:400;text-align: center;} /* شعار وسط‌چین بماند */
-/* پاراگراف‌ها و متن‌های توضیحی */
-p{margin:8px 0;font-size:16px;color:#444;line-height:1.6;padding:0 10px;}
-.contact-info{margin-top:20px;padding:10px;border-top:1px dashed #eee;}
-.contact-info p{font-size:17px;font-weight:bold;color:#111;}
-/* برای شماره تلفن که چپ‌چین است */
-.phone-number{direction: ltr; display: inline-block; font-size: 18px; font-weight: bold; color: #d9534f;}
+h1{margin:0 0 5px;font-size:30px;color:#000;text-align: center;font-weight: 800;} 
+/* شعار */
+h2{margin:0 0 20px;font-size:16px;color:#b8860b;font-weight:500;text-align: center;} /* رنگ طلایی */
+/* متن‌های توضیحی */
+p{margin:6px 0;font-size:16px;color:#555;line-height:1.7;}
 
-.note{font-size:14px;color:#777;margin-top:10px;text-align: center;} /* شماره کارت وسط‌چین بماند */
-
-/* قسمت لینک‌ها و دکمه‌ها */
-.action-links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;}
-.action-links a, .action-links button{
-    padding:14px;
-    font-size:16px;
-    border:none;
-    border-radius:12px;
-    cursor:pointer;
-    text-decoration:none;
-    transition:all 0.3s;
-    font-weight:bold;
-    text-align: center; /* دکمه‌ها وسط‌چین بمانند */
-    font-family:'Vazirmatn', sans-serif; /* اطمینان از فونت دکمه‌ها */
+/* کادر شعار ویژه */
+.motto-box {
+    text-align: center;
+    padding: 15px;
+    margin: 15px 0;
+    background: #fffbe0;
+    border: 2px solid #ffcc00;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #b8860b;
+    font-size: 16px;
 }
 
-/* استایل لینک‌های اصلی (اینستاگرام، تماس) */
-.main-link{background:#d9534f;color:#fff;}
-.main-link:hover{background:#c9302c;}
-/* استایل لینک‌های ثانویه (لوکیشن، کارت) */
-.secondary-link{background:#f0ad4e;color:#fff;}
-.secondary-link:hover{background:#ec971f;}
+/* بخش اطلاعات تماس */
+.contact-group {
+    margin-top: 20px;
+    padding: 10px 0;
+    border-top: 1px dashed #ddd;
+}
+.contact-group strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 17px;
+    color: #000;
+}
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+}
+.contact-item:last-child {
+    border-bottom: none;
+}
+.contact-person {
+    font-weight: bold;
+    color: #333;
+    font-size: 15px;
+}
+/* برای شماره تلفن که چپ‌چین است */
+.phone-number{
+    direction: ltr; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #005b96; /* آبی برای لینک تماس */
+    text-decoration: none;
+}
+.phone-number:hover {
+    text-decoration: underline;
+}
+
+
+/* قسمت لینک‌ها و دکمه‌ها */
+.links{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px;text-align: center;}
+.links a{
+    padding:12px 10px;
+    font-size:16px;
+    border:1px solid #ffcc00;
+    border-radius:10px;
+    text-decoration:none;
+    color:#000;
+    background:#ffcc00; /* طلایی */
+    font-weight:bold;
+    transition:all 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+.links a:hover{background:#e6b800;}
 
 /* دکمه ذخیره مخاطب */
 #saveBtn{
-    margin-top:20px;
-    padding:15px;
+    margin-top:25px;
+    padding:16px;
     font-size:18px;
     border:none;
     border-radius:12px;
-    background:#5cb85c;
-    color:#fff;
+    background:#000; /* مشکی */
+    color:#ffcc00; /* متن طلایی */
     cursor:pointer;
     width:100%;
     transition:background 0.3s;
-    font-family:'Vazirmatn', sans-serif; /* اطمینان از فونت دکمه */
+    font-family:'Vazirmatn', sans-serif;
 }
-#saveBtn:hover{background:#4cae4c;}
+#saveBtn:hover{background:#333;}
 
-/* لیست نمایندگی‌ها و آدرس‌ها */
-.list-header{font-size:15px;color:#333;margin-top:15px;margin-bottom:5px;font-weight:bold;text-align: right;padding-right: 10px;}
-.item{background:#fefefe;border:1px solid #eee;padding:10px;border-radius:10px;margin-bottom:8px;text-align: right;font-size:15px;}
-.item strong{color:#d9534f;font-size:16px;display:block;margin-bottom:4px;}
+.service-list {
+    margin-top: 15px;
+    padding: 10px 0;
+    list-style: none;
+}
+.service-list li {
+    padding: 6px 0;
+    font-size: 15px;
+    color: #444;
+    position: relative;
+    padding-right: 18px;
+}
+.service-list li::before {
+    content: "✔️";
+    position: absolute;
+    right: 0;
+    color: #007bff; /* آیکون آبی */
+    font-size: 14px;
+}
 </style>
 </head>
 <body>
 
 <div class="card">
-  <h1>محمد کسروی</h1>
-  <h2>از پدرپخش به قیمت پخش خرید کن</h2>
+  <h1>نمایشگاه اتولاکچری 🔱</h1>
+  <h2>جایی که ماشین، فقط وسیله نیست | انتخاب شخصیت شماست!</h2>
   
-  <p style="font-weight:600; color:#000;">پخش ملزومات آشپزخانه (هود، سینک، اجاق گاز و شیر آلات)</p>
-
-  <div class="contact-info">
-    <p>📱 تماس: <span class="phone-number">0912 228 2128</span></p>
-  </div>
-
-  <div class="list-header">نماینده رسمی برندهای:</div>
-  <div class="item">
-      کن، آدلان، شیرآلات آرتین، سینک‌های پیانویی و گرانیتی
+  <div class="motto-box">
+      💎 با ما در شهر بدرخشید 💎
   </div>
   
-  <div class="action-links">
-    <a href="tel:+989122282128" class="main-link">📞 تماس مستقیم</a>
-    <a href="https://www.instagram.com/pedarepakhash" target="_blank" class="main-link">📸 اینستاگرام</a>
-    
-    <a href="https://maps.app.goo.gl/0" target="_blank" class="secondary-link">📍 لوکیشن مرکزی</a>
-    <button onclick="copyCardNumber()" class="secondary-link">💳 کپی شماره کارت</button>
+  <div class="service-list">
+      <li>خرید و فروش انواع اتومبیل‌های ایرانی و خارجی</li>
+      <li>فروش خودرو صفر و کارکرده</li>
+      <li>معاوضه خودروی کارکرده شما با صفر</li>
+      <li>مشاوره در امر خرید و فروش و قیمت روزانه خودروهای صفر</li>
+      <li>بیش از 10 سال سابقه با ضمانت سلامت و سند قطعی</li>
   </div>
 
-  <button id="saveBtn">📇 ذخیره مخاطب (پدرِ پخش)</button>
-  
-  <div class="list-header" style="margin-top:25px;">آدرس شعب:</div>
-  <div class="item">
-      <strong>شعبه مرکزی:</strong> شهرک ولیعصر، خیابان نامدار، پاساژ بزرگ ولیعصر، پلاک ۴۲
+  <div class="contact-group">
+      <strong>📞 تماس با ما:</strong>
+      
+      <div class="contact-item">
+          <span class="contact-person">محمد بیکی (مدیریت)</span>
+          <a href="tel:+989123962500" class="phone-number">0912 396 2500</a>
+      </div>
+      <div class="contact-item">
+          <span class="contact-person">نجفی (فروش و مالی)</span>
+          <a href="tel:+989181664320" class="phone-number">0918 166 4320</a>
+      </div>
+      <div class="contact-item">
+          <span class="contact-person">قربانی (اسناد)</span>
+          <a href="tel:+989124935641" class="phone-number">0912 493 5641</a>
+      </div>
+      <div class="contact-item">
+          <span class="contact-person">دفتر نمایشگاه (تلفن ثابت)</span>
+          <a href="tel:+988644249321" class="phone-number">086 4424 9321-2</a>
+      </div>
   </div>
-  <div class="item">
-      <strong>شعبه ۱:</strong> اسلامشهر، میدان نماز، خ علی ابن ابیطالب، نبش کوچه ۲۹، فروشگاه پدرِ پخش ۱
+
+  <div class="links">
+    <a href="https://www.instagram.com/autoluxury2017" target="_blank">📸 اینستاگرام</a>
+    <a href="https://t.me/autoluxy" target="_blank">✉️ تلگرام</a>
+    <a href="http://googleusercontent.com/maps.google.com/3" target="_blank">📍 لوکیشن نمایشگاه</a>
   </div>
+
+  <button id="saveBtn">📇 ذخیره مخاطب (محمد بیکی)</button>
   
-  <p class="note">بانک ملت: <span style="direction: ltr; display: inline-block;">۶۱۰۴۳۳۷۸۴۹۳۵۸۶۰۹</span> - محمد کسروی</p>
+  <p style="text-align: center; font-size: 14px; margin-top: 15px;">آدرس: دلیجان، بلوار شهید فهمیده، جنب رستوران یوسفی</p>
 </div>
 
 <script>
-// تابع ذخیره مخاطب در گوشی
 document.getElementById('saveBtn').addEventListener('click', () => {
-  // ساختار vCard
+  // ساختار vCard برای ذخیره اطلاعات تماس محمد بیکی (مدیریت) و دفتر
   const vcard = 
 `BEGIN:VCARD
 VERSION:3.0
-N:کسروی;محمد;;;
-FN:محمد کسروی
-ORG:پدرِ پخش (ملزومات آشپزخانه)
-TITLE:پخش کننده هود، سینک، گاز و شیرآلات
-TEL;TYPE=CELL:+989122282128
-URL;TYPE=INSTAGRAM:https://www.instagram.com/pedarepakhash
-ADR;TYPE=WORK;CHARSET=UTF-8:;;شهرک ولیعصر، خیابان نامدار، پاساژ بزرگ ولیعصر، پلاک ۴۲;تهران;;;ایران
-NOTE;CHARSET=UTF-8:از پدرپخش به قیمت پخش خرید کن. نماینده کن، آدلان، آرتین.
+N:بیکی;محمد;;;
+FN:محمد بیکی - اتولاکچری
+ORG:نمایشگاه اتولاکچری
+TITLE:مدیریت و فروش خودروهای لوکس و سنگین
+TEL;TYPE=CELL;TYPE=PREF:+989123962500
+TEL;TYPE=WORK;TYPE=VOICE:+988644249321
+TEL;TYPE=CELL:09181664320 ; نجفی (فروش)
+TEL;TYPE=CELL:09124935641 ; قربانی (اسناد)
+URL;TYPE=INSTAGRAM:https://www.instagram.com/autoluxury2017
+URL;TYPE=TELEGRAM:https://t.me/autoluxy
+ADR;TYPE=WORK;CHARSET=UTF-8:;;بلوار شهید فهمیده جنب رستوران یوسفی;دلیجان;استان مرکزی;;ایران
+NOTE;CHARSET=UTF-8:انتخاب شخصیت شماست! بیش از 10 سال سابقه با ضمانت سلامت و سند قطعی.
 END:VCARD`;
 
   // ایجاد و دانلود فایل VCF
@@ -147,7 +219,7 @@ END:VCARD`;
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'PedarePakhsh_Kasravi.vcf';
+  a.download = 'AutoLuxury_Biki.vcf';
   document.body.appendChild(a);
   a.click();
   
@@ -155,53 +227,9 @@ END:VCARD`;
   setTimeout(() => {
     URL.revokeObjectURL(url);
     a.remove();
-    alert('مخاطب با موفقیت ذخیره شد!');
+    alert('مخاطب (محمد بیکی و دفتر) با موفقیت ذخیره شد!');
   },1000);
 });
-
-// تابع کپی شماره کارت به کلیپ‌بورد
-function copyCardNumber() {
-    const cardNumber = '6104337849358609';
-    // استفاده از Navigator API برای کپی کردن
-    if (navigator.clipboard) {
-        navigator.clipboard.writeText(cardNumber).then(() => {
-            alert("شماره کارت ۶۱۰۴۳۳۷۸۴۹۳۵۸۶۰۹ کپی شد.");
-        }).catch(err => {
-            console.error('Could not copy text: ', err);
-            // Fallback برای مرورگرهایی که Navigator API را پشتیبانی نمی‌کنند
-            fallbackCopyTextToClipboard(cardNumber);
-        });
-    } else {
-        fallbackCopyTextToClipboard(cardNumber);
-    }
-}
-
-// تابع کمکی برای کپی در مرورگرهای قدیمی‌تر
-function fallbackCopyTextToClipboard(text) {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    // استایل برای مخفی کردن textarea
-    textArea.style.position = "fixed";
-    textArea.style.top = 0;
-    textArea.style.left = 0;
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    
-    try {
-        const successful = document.execCommand('copy');
-        if (successful) {
-             alert("شماره کارت ۶۱۰۴۳۳۷۸۴۹۳۵۸۶۰۹ کپی شد.");
-        } else {
-             alert('خطا در کپی! لطفا شماره کارت را دستی یادداشت کنید.');
-        }
-    } catch (err) {
-        console.error('Fallback: Oops, unable to copy', err);
-        alert('خطا در کپی! لطفا شماره کارت را دستی یادداشت کنید.');
-    }
-
-    document.body.removeChild(textArea);
-}
 </script>
 
 </body>
