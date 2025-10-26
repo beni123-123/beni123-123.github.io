@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>آراد پک سنتر | گارانتی چاپ | چاپ و بسته بندی</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* استایل‌های پایه */
+body{
+    margin:0;
+    padding:0;
+    background:#e0e7ee; /* زمینه روشن متمایل به آبی */
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: rtl; 
+    text-align: right; 
+}
+/* کارت اصلی */
+.card{
+    width:92%;
+    max-width:420px;
+    background:#fff;
+    border-radius:15px;
+    padding:30px 25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    border-top: 5px solid #005a8d; /* نوار آبی پررنگ (اصلی) */
+    text-align: right;
+    color:#333;
+}
+/* عنوان اصلی */
+h1{margin:0 0 5px;font-size:24px;color:#005a8d;text-align: center;font-weight: 700;} 
+/* زیرعنوان/نوع بیزینس */
+h2{margin:0 0 20px;font-size:16px;color:#d9534f;font-weight:600;text-align: center;} /* قرمز برای هشدار و جلب توجه */
+
+/* کادر گارانتی (نقطه قوت) */
+.guarantee-box {
+    text-align: center;
+    padding: 15px;
+    margin: 15px 0;
+    background: #fff3f3;
+    border: 2px solid #d9534f; /* قرمز برای جلب توجه */
+    border-radius: 10px;
+    font-weight: 700;
+    color: #d9534f;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.guarantee-box span {
+    color: #005a8d; /* آبی برای سوال */
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* اطلاعات تماس */
+.contact-group {
+    margin-top: 20px;
+    padding: 10px 0;
+}
+.contact-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted #eee;
+}
+.contact-item:last-child {
+    border-bottom: none;
+}
+.contact-person {
+    font-weight: bold;
+    color: #555;
+    font-size: 15px;
+}
+/* برای شماره تلفن (جهت ltr) */
+.phone-number{
+    direction: ltr; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #005a8d;
+    text-decoration: none;
+}
+.phone-number:hover {
+    text-decoration: underline;
+}
+
+/* لیست خدمات */
+.service-list {
+    margin-top: 20px;
+    border-top: 1px dashed #ddd;
+    padding-top: 15px;
+}
+.service-list strong {
+    font-size: 16px;
+    color: #005a8d;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.service-list ul {
+    list-style: none;
+    padding: 0;
+}
+.service-list li {
+    padding: 6px 0;
+    font-size: 15px;
+    color: #444;
+    position: relative;
+    padding-right: 18px;
+}
+.service-list li::before {
+    content: "✅";
+    position: absolute;
+    right: 0;
+    font-size: 14px;
+}
+
+/* قسمت لینک‌ها */
+.social-links{display:grid;grid-template-columns: repeat(4, 1fr);gap:8px;margin-top:20px;}
+.social-links a{
+    padding:10px 5px;
+    font-size:14px;
+    border-radius:8px;
+    text-decoration:none;
+    color:#fff;
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+    background: #005a8d; /* آبی */
+}
+.social-links a:hover{background:#004b73;}
+
+/* دکمه اصلی (ذخیره مخاطب) */
+#saveBtn{
+    margin-top:25px;
+    padding:16px;
+    font-size:17px;
+    border:none;
+    border-radius:12px;
+    background:#28a745; /* سبز برای عمل نهایی */
+    color:#fff;
+    cursor:pointer;
+    width:100%;
+    font-weight: 700;
+    transition:background 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+#saveBtn:hover{background:#218838;}
+
+.footer-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    border-top: 1px dashed #eee;
+    padding-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>آراد پک سنتر</h1>
+  <h2>مجتمع چاپ و بسته بندی</h2>
+  
+  <div class="guarantee-box">
+      <span>🟣 کجا دیدی کار چاپی گارانتی داشته باشه؟ 🟣</span>
+      باورتون میشه تمام کارهامون گارانتی چاپ داره! اگر یک در هزار سفارشتون مشکل داشت، بدون ریالی هزینه دوباره تولید میشه.
+  </div>
+
+  <div class="contact-group">
+      <strong>🎯 برای ثبت سفارش تماس بگیرید:</strong>
+      
+      <div class="contact-item">
+          <span class="contact-person">دفتر مرکزی</span>
+          <a href="tel:+982188394570" class="phone-number">021 8839 4570</a>
+      </div>
+      <div class="contact-item">
+          <span class="contact-person">تلفن دفتر</span>
+          <a href="tel:+982188394596" class="phone-number">021 8839 4596</a>
+      </div>
+      <div class="contact-item">
+          <span class="contact-person">همراه ۱ (واتساپ/تلگرام)</span>
+          <a href="tel:+989122241372" class="phone-number">0912 224 1372</a>
+      </div>
+      <div class="contact-item">
+          <span class="contact-person">همراه ۲</span>
+          <a href="tel:+989904222214" class="phone-number">0990 422 2214</a>
+      </div>
+  </div>
+
+  <div class="social-links">
+    <a href="https://wa.me/989122241372" target="_blank" style="background:#25D366;">💬 واتساپ</a>
+    <a href="https://t.me/aradpackcenter" target="_blank" style="background:#0088cc;">✉️ تلگرام</a>
+    <a href="https://www.instagram.com/aradpackcenter" target="_blank" style="background:#E1306C;">📸 اینستاگرام</a>
+    <a href="https://youtube.com/aradpackcenter" target="_blank" style="background:#FF0000;">▶️ یوتیوب</a>
+    <a href="https://www.instagram.com/aradpackcenter1" target="_blank" style="background:#E1306C;">📸 اینستا (۲)</a>
+    <a href="http://www.aradpackcenter.com" target="_blank" style="background:#555;">🌐 وبسایت</a>
+  </div>
+  
+  <button id="saveBtn">📇 ذخیره مخاطب (دفتر آراد پک سنتر)</button>
+
+  <div class="service-list">
+      <strong>خدمات جامع پیش از چاپ، چاپ و پس از چاپ:</strong>
+      <ul>
+          <li>تولید جعبه و کارتن برای تمامی مصارف (مواد غذایی، آرایشی و...)</li>
+          <li>تولید لیبل مصارف (مواد غذایی، آرایشی و بهداشتی و...)</li>
+          <li>سازنده انواع کلیشه (۱.۱۴ تا ۶ میلیمتر) با دستگاه‌های پیشرفته</li>
+          <li>غرفه سازی نمایشگاه بین‌المللی (داخلی، خارجی و شهر آفتاب)</li>
+          <li>♻️ تولید ساک دستی (اسپان) سازگار با محیط زیست ♻️</li>
+      </ul>
+  </div>
+  
+  <p class="footer-text">خدمات کامل پیش از چاپ و پس از چاپ</p>
+</div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  // ساختار vCard برای ذخیره اطلاعات تماس (دفتر و همراه)
+  const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:سنتر;آراد پک;;;
+FN:مجتمع چاپ و بسته بندی آراد پک سنتر
+ORG:مجتمع چاپ و بسته بندی آراد پک سنتر
+TITLE:تولید کننده لیبل و جعبه با گارانتی چاپ
+TEL;TYPE=CELL;TYPE=PREF:+989122241372
+TEL;TYPE=CELL:+989904222214
+TEL;TYPE=WORK;TYPE=VOICE:+982188394570
+TEL;TYPE=WORK;TYPE=VOICE:+982188394596
+URL;TYPE=WEBSITE:http://www.aradpackcenter.com
+URL;TYPE=INSTAGRAM:https://www.instagram.com/aradpackcenter
+URL;TYPE=TELEGRAM:https://t.me/aradpackcenter
+URL;TYPE=YOUTUBE:https://youtube.com/aradpackcenter
+NOTE;CHARSET=UTF-8:تنها مجتمع چاپ با گارانتی تولید! تولید لیبل، جعبه، کارتن و کلیشه.
+END:VCARD`;
+
+  // ایجاد و دانلود فایل VCF
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'AradPackCenter.vcf';
+  document.body.appendChild(a);
+  a.click();
+  
+  // پاکسازی منابع
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+    alert('مخاطب با موفقیت ذخیره شد!');
+  },1000);
+});
+</script>
+
+</body>
+</html>
