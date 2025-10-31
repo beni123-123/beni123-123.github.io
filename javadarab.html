@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>فروشگاه لبخند | جواد عرب</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* رنگ‌های اصلی: قرمز (#FF4136) و زرد (#FFDC00) */
+:root {
+    --primary-color: #FF4136; /* قرمز */
+    --secondary-color: #FFDC00; /* زرد */
+    --text-dark: #333;
+    --text-light: #fff;
+}
+/* استایل‌های پایه */
+body{
+    margin:0;
+    padding:0;
+    background: var(--secondary-color); /* زمینه زرد برای شادی */
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: rtl; 
+    text-align: right; 
+}
+/* کارت اصلی */
+.card{
+    width:92%;
+    max-width:380px;
+    background: var(--text-light); /* زمینه سفید کارت */
+    border-radius:20px;
+    padding:30px 25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    border: 3px solid var(--primary-color); /* حاشیه قرمز */
+    text-align: right;
+    color: var(--text-dark);
+}
+/* عنوان اصلی */
+h1{
+    margin:0 0 5px;
+    font-size:30px;
+    color: var(--primary-color); /* قرمز */
+    text-align: center;
+    font-weight: 900; /* برای شبیه سازی فونت مروارید */
+} 
+/* شعار/زیرعنوان */
+h2{
+    margin:0 0 20px;
+    font-size:18px;
+    color: var(--text-dark);
+    font-weight: 700;
+    text-align: center;
+} 
+
+/* کادر شعار */
+.slogan-box {
+    text-align: center;
+    padding: 10px;
+    margin: 15px 0;
+    background: var(--secondary-color); /* زمینه زرد */
+    border-radius: 8px;
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 17px;
+    border: 1px dashed var(--primary-color);
+}
+.slogan-box span {
+    color: var(--primary-color);
+}
+
+/* اطلاعات تماس و آدرس */
+.info-group {
+    margin-top: 15px;
+    padding: 15px;
+    background: #fffcf0; /* زمینه سفید خیلی روشن */
+    border-radius: 12px;
+    border: 1px solid var(--secondary-color);
+}
+.info-item {
+    padding: 6px 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+.info-item strong {
+    color: var(--primary-color); /* قرمز */
+    margin-left: 5px;
+}
+/* برای شماره تلفن و آدرس (جهت ltr) */
+.ltr-text {
+    direction: ltr; 
+    display: inline-block; 
+    font-weight: bold; 
+    color: var(--text-dark); /* مشکی */
+    text-decoration: none;
+}
+.address-text {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+.address-text strong {
+    color: var(--primary-color);
+}
+
+/* قسمت لینک‌های ارتباطی */
+.social-links{display:grid;grid-template-columns: 1fr 1fr;gap:10px;margin-top:20px;}
+.social-links a{
+    padding:12px;
+    font-size:16px;
+    border-radius:10px;
+    text-decoration:none;
+    color:var(--text-light);
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+
+/* رنگ‌بندی شبکه‌های اجتماعی */
+.rubika{background:#007bff;} /* آبی روبیکا */
+.rubika:hover{background:#0056b3;}
+.eitaa{background:#3b82f6;} /* آبی ایتا */
+.eitaa:hover{background:#2563eb;}
+
+/* دکمه اصلی (ذخیره مخاطب) */
+#saveBtn{
+    margin-top:25px;
+    padding:16px;
+    font-size:18px;
+    border:none;
+    border-radius:12px;
+    background: var(--primary-color); /* قرمز */
+    color:var(--text-light);
+    cursor:pointer;
+    width:100%;
+    font-weight: 700;
+    transition:background 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+#saveBtn:hover{background:#cc0000;}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>فروشگاه لبخند</h1>
+  <h2>مدیریت: جواد عرب</h2>
+  
+  <div class="slogan-box">
+      <span>😉😉</span> زندگی با لبخند
+  </div>
+
+  <div class="info-group">
+      <div class="info-item">
+          <strong>📞 موبایل:</strong> 
+          <a href="tel:+989125912512" class="ltr-text">0912 591 2512</a>
+      </div>
+      <div class="info-item">
+          <strong>☎️ تلفن ثابت:</strong> 
+          <a href="tel:+982136035218" class="ltr-text">021 3603 5218</a>
+      </div>
+      
+      <div class="info-item address-text">
+          <strong style="font-size: 18px; line-height: 1;">♦️♦️</strong>
+          <strong style="color: var(--primary-color);">آدرس فروشگاه:</strong>
+          <p style="margin-top: 5px;">پاکدشت، بلوار شهدای رحیمی، میدان قدس قدیم، بین سرو ۲ و ۳، فروشگاه لبخند</p>
+      </div>
+  </div>
+
+  <div class="social-links">
+    <a href="https://rubika.ir/Labkhandmarket" target="_blank" class="rubika">روبیکا</a>
+    <a href="https://eitaa.com/Labkhandmarket" target="_blank" class="eitaa">ایتا</a>
+  </div>
+  
+  <button id="saveBtn">📇 ذخیره مخاطب (جواد عرب)</button>
+</div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  // ساختار vCard که تمامی اطلاعات را شامل می‌شود
+  const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:عرب;جواد;;;
+FN:جواد عرب - فروشگاه لبخند
+ORG:فروشگاه لبخند
+TITLE:مدیریت فروشگاه
+TEL;TYPE=CELL;TYPE=PREF:+989125912512
+TEL;TYPE=WORK;TYPE=VOICE:+982136035218
+URL;TYPE=RUBIKA:https://Rubika.ir/Labkhandmarket
+URL;TYPE=EITAA:https://eitaa.com/Labkhandmarket
+ADR;TYPE=WORK;CHARSET=UTF-8:;;بین سرو ۲ و ۳;پاکدشت;بلوار شهدای رحیمی;تهران;ایران
+NOTE;CHARSET=UTF-8:زندگی با لبخند. فروش حضوری - لبخند مارکت.
+END:VCARD`;
+
+  // ایجاد و دانلود فایل VCF
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'LabkhandMarket_Arab.vcf';
+  document.body.appendChild(a);
+  a.click();
+  
+  // پاکسازی منابع
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+    alert('مخاطب با موفقیت ذخیره شد!');
+  },1000);
+});
+</script>
+
+</body>
+</html>
