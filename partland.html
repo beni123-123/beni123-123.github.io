@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>پارت لند | شرکت مهندسی ساختمانی</title>
+<title>پارت لند | Partt Land | شرکت مهندسی ساختمانی</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
 <style>
 /* استایل‌های پایه برای قرارگیری در مرکز صفحه */
@@ -22,7 +22,7 @@ body{
 /* کارت اصلی با حاشیه مرتبط با صنعت ساختمان */
 .card{
     width:92%;
-    max-width:420px;
+    max-width:400px;
     background:#fff;
     border-radius:15px;
     padding:30px 25px;
@@ -35,107 +35,121 @@ body{
 h1{margin:5px 0 5px;font-size:26px;color:#005b96;text-align: center;} /* رنگ آبی تیره */
 /* شعار یا زیرعنوان */
 h2{margin:5px 0 20px;font-size:16px;color:#333;font-weight:400;text-align: center;}
-/* پاراگراف‌ها */
-p{margin:8px 0;font-size:16px;color:#333;line-height:1.6;padding:0 5px;}
-.contact-info{margin-top:20px;padding:10px;border-top:1px dashed #ddd;text-align: center;}
-/* برای شماره تلفن که چپ‌چین است */
-.phone-number{direction: ltr; display: inline-block; font-size: 18px; font-weight: bold; color: #005b96;}
 
-/* قسمت لینک‌ها و دکمه‌ها */
-.links{display:grid;grid-template-columns:1fr;gap:12px;margin-top:20px;text-align: center;} /* تغییر به ۱ ستون */
+/* کادر اطلاعات تماس */
+.info-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f5fafd;
+    border-radius: 10px;
+    border: 1px solid #c0d9eb;
+}
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted #e0e0e0;
+}
+.info-item:last-child {
+    border-bottom: none;
+}
+.info-label {
+    font-weight: bold;
+    color: #005b96;
+    font-size: 15px;
+}
+/* برای شماره تلفن و لینک‌ها (جهت ltr) */
+.ltr-text {
+    direction: ltr; 
+    display: inline-block; 
+    font-size: 16px; 
+    font-weight: bold; 
+    color: #333;
+    text-decoration: none;
+}
+.ltr-text:hover {
+    text-decoration: underline;
+}
+
+/* قسمت لینک‌های ارتباطی */
+.links{display:grid;grid-template-columns: repeat(3, 1fr);gap:10px;margin-top:20px;text-align: center;}
 .links a{
     padding:12px 10px;
-    font-size:16px;
-    border:1px solid #cce5ff;
+    font-size:15px;
     border-radius:10px;
     text-decoration:none;
-    color:#005b96;
-    background:#e6f2ff;
+    color:#fff;
     font-weight:bold;
     transition:all 0.3s;
     font-family:'Vazirmatn', sans-serif;
+    background: #005b96; /* آبی مهندسی */
 }
-.links a:hover{background:#cce5ff;text-decoration:none;}
+.links a:nth-child(2) {background: #E1306C;} /* اینستاگرام */
+.links a:nth-child(3) {background: #0e76a8;} /* لینکدین */
+
+.links a:hover{opacity: 0.8;}
 
 /* دکمه ذخیره مخاطب */
 #saveBtn{
     margin-top:25px;
-    padding:15px 24px;
+    padding:16px;
     font-size:17px;
     border:none;
     border-radius:12px;
-    background:#3498db; /* آبی روشن */
+    background:#28a745; /* سبز برای عمل نهایی */
     color:#fff;
     cursor:pointer;
     width:100%;
+    font-weight: 700;
     transition:background 0.3s;
     font-family:'Vazirmatn', sans-serif;
 }
-#saveBtn:hover{background:#2980b9;}
-
-/* المان‌های ساختمانی */
-.icon-text {
-    display: flex;
-    align-items: center;
-    margin-top: 15px;
-    padding: 10px;
-    background: #f7f7f7;
-    border-radius: 8px;
-    border-right: 4px solid #005b96;
-}
-.icon {
-    font-size: 24px;
-    color: #005b96;
-    margin-left: 10px; /* فاصله از متن */
-}
-.icon-text p {
-    margin: 0;
-    font-weight: 500;
-}
+#saveBtn:hover{background:#218838;}
 </style>
 </head>
 <body>
 
 <div class="card">
-  <h1>شرکت مهندسی ساختمانی پارت لند</h1>
-  <h2>طراحی، نظارت و اجرای پروژه‌های ساختمانی</h2>
+  <h1>پارت لند (Partt Land)</h1>
+  <h2>شرکت مهندسی ساختمانی</h2>
   
-  <div class="icon-text">
-      <span class="icon">🏗️</span>
-      <p><strong>ساختن آینده‌ای پایدار</strong></p>
-  </div>
-
-  <div class="icon-text">
-      <span class="icon">🏢</span>
-      <p>تلفن دفتر: <span class="phone-number">021-44433616-17</span></p>
-  </div>
-  
-  <div class="icon-text">
-      <span class="icon">🌐</span>
-      <p>وبسایت رسمی: <span style="direction:ltr;">ParttLand.com</span></p>
+  <div class="info-box">
+      <div class="info-item">
+          <span class="info-label">☎️ تلفن دفتر ۱:</span>
+          <a href="tel:+982144433616" class="ltr-text">021 4443 3616</a>
+      </div>
+      <div class="info-item">
+          <span class="info-label">☎️ تلفن دفتر ۲:</span>
+          <a href="tel:+982144433617" class="ltr-text">021 4443 3617</a>
+      </div>
   </div>
 
   <div class="links">
-    <a href="http://www.parttland.com/" target="_blank">🌐 ورود به وبسایت رسمی</a>
+    <a href="http://parttland.com" target="_blank" style="background:#005b96;">🌐 وبسایت</a>
+    <a href="https://www.instagram.com/parttland.co" target="_blank">📸 اینستاگرام</a>
+    <a href="https://www.linkedin.com/company/parttland" target="_blank">🔗 لینکدین</a>
   </div>
 
-  <button id="saveBtn">📇 ذخیره مخاطب (دفتر پارت لند)</button>
+  <button id="saveBtn">📇 ذخیره مخاطب (شرکت پارت لند)</button>
 </div>
 
 <script>
 document.getElementById('saveBtn').addEventListener('click', () => {
-  // ساختار vCard برای ذخیره اطلاعات تماس (دفتر)
+  // ساختار vCard که تمامی اطلاعات را شامل می‌شود
   const vcard = 
 `BEGIN:VCARD
 VERSION:3.0
-N:پارت لند;شرکت;;;
+N:Partt Land;شرکت;;;
 FN:شرکت مهندسی ساختمانی پارت لند
 ORG:شرکت مهندسی ساختمانی پارت لند
-TITLE:طراحی، نظارت و اجرای پروژه‌های ساختمانی
-TEL;TYPE=WORK;TYPE=VOICE:+982144433616
+TITLE:دفتر مرکزی
+TEL;TYPE=WORK;TYPE=VOICE;TYPE=PREF:+982144433616
 TEL;TYPE=WORK;TYPE=VOICE:+982144433617
-URL:http://www.parttland.com/
-NOTE:ساختن آینده‌ای پایدار.
+URL;TYPE=WEBSITE:http://parttland.com
+URL;TYPE=INSTAGRAM:https://www.instagram.com/parttland.co
+URL;TYPE=LINKEDIN:https://www.linkedin.com/company/parttland
+NOTE;CHARSET=UTF-8:شرکت مهندسی ساختمانی پارت لند.
 END:VCARD`;
 
   // ایجاد و دانلود فایل VCF
@@ -143,7 +157,7 @@ END:VCARD`;
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'ParttLand_Office.vcf';
+  a.download = 'ParttLand_Info.vcf';
   document.body.appendChild(a);
   a.click();
   
