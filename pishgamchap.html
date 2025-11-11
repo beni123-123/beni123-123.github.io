@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>پیشگام چاپ | تولید لیبل پشت چسبدار</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* رنگ‌های اصلی: آبی تیره (#003366)، آبی روشن (#007bff)، سفید (#fff) */
+:root {
+    --dark-blue: #003366; 
+    --light-blue: #007bff; 
+    --text-light: #fff;
+    --text-dark: #333;
+    --bg-light: #f7f9fb;
+}
+/* استایل‌های پایه */
+body{
+    margin:0;
+    padding:0;
+    background: var(--bg-light); /* زمینه روشن */
+    font-family:'Vazirmatn', sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: rtl; 
+    text-align: right; 
+}
+/* کارت اصلی */
+.card{
+    width:92%;
+    max-width:420px;
+    background: var(--text-light); /* زمینه سفید کارت */
+    border-radius:20px;
+    padding:30px 25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    border-top: 5px solid var(--dark-blue); /* نوار آبی تیره */
+    text-align: right;
+    color: var(--text-dark);
+}
+/* عنوان اصلی */
+h1{margin:0 0 5px;font-size:26px;color: var(--dark-blue);text-align: center;font-weight: 800;} 
+/* زیرعنوان/محصول */
+h2{margin:0 0 20px;font-size:16px;color: var(--light-blue);font-weight:600;text-align: center;} 
+
+/* کادر اطلاعات عمومی (دفتر و لینک‌ها) */
+.general-info {
+    padding: 15px;
+    background: #e6f7ff; /* زمینه آبی خیلی روشن */
+    border-radius: 10px;
+    border: 1px solid #c0e0f5;
+    margin-bottom: 25px;
+}
+.general-info strong {
+    font-size: 16px;
+    color: var(--dark-blue);
+    display: block;
+    margin-bottom: 10px;
+}
+.contact-item {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* برای شماره تلفن و لینک‌ها (جهت ltr) */
+.ltr-text {
+    direction: ltr; 
+    display: inline-block; 
+    font-weight: bold; 
+    color: var(--dark-blue); 
+    text-decoration: none;
+    font-size: 15px;
+}
+.ltr-text:hover {
+    text-decoration: underline;
+}
+
+/* لینک‌های ارتباطی */
+.links{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    margin-top:10px;
+}
+.links a{
+    padding:10px;
+    font-size:15px;
+    border-radius:8px;
+    text-decoration:none;
+    color:var(--text-light);
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+    background: var(--light-blue); /* آبی روشن */
+}
+.links a:hover{background:#0056b3;}
+
+
+/* بخش تماس‌ها (افراد) */
+.person-group {
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fcfcfc;
+}
+.person-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    border-bottom: 2px solid var(--light-blue);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.person-title span:last-child {
+    font-weight: 500;
+    color: #666;
+    font-size: 14px;
+}
+.mobile-number {
+    font-size: 16px;
+    color: var(--dark-blue);
+}
+
+/* دکمه اصلی (ذخیره مخاطب) */
+#saveBtn{
+    margin-top:25px;
+    padding:16px;
+    font-size:17px;
+    border:none;
+    border-radius:12px;
+    background: #28a745; /* سبز برای عمل نهایی */
+    color:var(--text-light);
+    cursor:pointer;
+    width:100%;
+    font-weight: 700;
+    transition:background 0.3s;
+    font-family:'Vazirmatn', sans-serif;
+}
+#saveBtn:hover{background:#218838;}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>شرکت پیشگام چاپ</h1>
+  <h2>تولید کننده لیبل پشت چسب دار رول</h2>
+  
+  <div class="general-info">
+      <strong>📞 تماس با دفتر و ارتباطات:</strong>
+      <div class="contact-item">
+          <span class="ltr-text">021 4681 2806</span>
+          <span class="ltr-text">021 4681 2807</span>
+      </div>
+      <div class="links">
+        <a href="http://www.pishgamchap.com" target="_blank" style="background: var(--dark-blue);">🌐 وبسایت</a>
+        <a href="https://www.instagram.com/pishgam.chap" target="_blank" style="background:#E1306C;">📸 اینستاگرام</a>
+      </div>
+  </div>
+
+  <div class="person-group">
+      <div class="person-title">
+          <span>احمد رضا فتوحی</span>
+          <span>مدیر کارخانه</span>
+      </div>
+      <div class="contact-item">
+          <span class="contact-item">تلفن همراه:</span>
+          <a href="tel:+989121467833" class="ltr-text mobile-number">0912 146 7833</a>
+      </div>
+  </div>
+  
+  <div class="person-group">
+      <div class="person-title">
+          <span>تقی مصطفی نیا</span>
+          <span>مدیر عامل</span>
+      </div>
+      <div class="contact-item">
+          <span class="contact-item">تلفن همراه:</span>
+          <a href="tel:+989127789929" class="ltr-text mobile-number">0912 778 9929</a>
+      </div>
+  </div>
+  
+  <div class="person-group">
+      <div class="person-title">
+          <span>حضرت قلی رحمی</span>
+          <span>رئیس هیات مدیره</span>
+      </div>
+      <div class="contact-item">
+          <span class="contact-item">تلفن همراه:</span>
+          <a href="tel:+989121058504" class="ltr-text mobile-number">0912 105 8504</a>
+      </div>
+  </div>
+
+  <div class="person-group">
+      <div class="person-title">
+          <span>علی ساسانی</span>
+          <span>مدیر تولید و فروش</span>
+      </div>
+      <div class="contact-item">
+          <span class="contact-item">تلفن همراه:</span>
+          <a href="tel:+989121968991" class="ltr-text mobile-number">0912 196 8991</a>
+      </div>
+  </div>
+  
+  <div class="person-group">
+      <div class="person-title">
+          <span>امید خواجه نوری</span>
+          <span>مسئول امور مشتریان</span>
+      </div>
+      <div class="contact-item">
+          <span class="contact-item">تلفن همراه:</span>
+          <a href="tel:+989121122868" class="ltr-text mobile-number">0912 112 2868</a>
+      </div>
+  </div>
+
+
+  <button id="saveBtn">📇 ذخیره مخاطبین (شرکت پیشگام چاپ)</button>
+</div>
+
+<script>
+document.getElementById('saveBtn').addEventListener('click', () => {
+  // ساختار vCard برای ذخیره اطلاعات تمامی افراد اصلی شرکت
+  const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:فتوحی;احمد رضا;;;
+FN:احمد رضا فتوحی - مدیر کارخانه پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:مدیر کارخانه
+TEL;TYPE=CELL;TYPE=PREF:+989121467833
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+URL;TYPE=WEBSITE:http://www.pishgamchap.com
+URL;TYPE=INSTAGRAM:https://www.instagram.com/pishgam.chap
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:مصطفی نیا;تقی;;;
+FN:تقی مصطفی نیا - مدیر عامل پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:مدیر عامل
+TEL;TYPE=CELL;TYPE=PREF:+989127789929
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:رحمی;حضرت قلی;;;
+FN:حضرت قلی رحمی - رئیس هیات مدیره پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:رئیس هیات مدیره
+TEL;TYPE=CELL;TYPE=PREF:+989121058504
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:ساسانی;علی;;;
+FN:علی ساسانی - مدیر تولید و فروش پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:مدیر تولید و فروش
+TEL;TYPE=CELL;TYPE=PREF:+989121968991
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:خواجه نوری;امید;;;
+FN:امید خواجه نوری - مسئول پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:مسئول امور مشتریان
+TEL;TYPE=CELL;TYPE=PREF:+989121122868
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+END:VCARD
+`;
+
+  // ایجاد و دانلود فایل VCF
+  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'PishgamChap_Contacts.vcf';
+  document.body.appendChild(a);
+  a.click();
+  
+  // پاکسازی منابع
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    a.remove();
+    alert('۵ مخاطب شامل تمام اطلاعات تماس ذخیره شدند!');
+  },1000);
+});
+</script>
+
+</body>
+</html>
