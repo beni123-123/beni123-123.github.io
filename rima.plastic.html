@@ -3,303 +3,477 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ریما پلاستیک | Rima Plastic | محصولات خانه و آشپزخانه</title>
+<title>ریما پلاستیک | تولید محصولات خانه و آشپزخانه</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
 <style>
-/* رنگ‌های اصلی: سبز (#28a745)، طلایی (#b8860b)، سفید (#fff) و خاکستری تیره (#333) */
+/* --- تنظیمات اصلی چپ‌چین (LTR) --- */
 :root {
-    --primary-color: #28a745; /* سبز */
-    --secondary-color: #b8860b; /* طلایی */
+    --primary-green: #4CAF50; /* سبز روشن تر */
+    --dark-green: #2E7D32; /* سبز تیره تر برای کنتراست */
+    --gold: #FFC107; /* طلایی ملایم تر */
+    --white: #FFFFFF; /* سفید */
     --text-dark: #333;
     --text-light: #fff;
-    --bg-light: #f7fff7;
+    --bg-light: #e8f5e9; /* پس زمینه روشن سبز */
 }
-/* استایل‌های پایه */
+
 body{
     margin:0;
     padding:0;
-    background: var(--bg-light); /* زمینه سفید متمایل به سبز */
+    background: var(--bg-light);
     font-family:'Vazirmatn', sans-serif;
     display:flex;
     align-items:center;
     justify-content:center;
     min-height:100vh;
-    direction: rtl; 
-    text-align: right; 
+    direction: ltr;
+    text-align: left;
 }
 /* کارت اصلی */
 .card{
     width:92%;
-    max-width:420px;
-    background: var(--text-light); /* زمینه سفید کارت */
-    border-radius:20px;
+    max-width:400px;
+    background: var(--white); 
+    border-radius:25px; 
     padding:30px 25px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    border-top: 5px solid var(--secondary-color); /* نوار طلایی */
-    text-align: right;
-    color: var(--text-dark);
+    box-shadow:0 15px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #c8e6c9; /* حاشیه متناسب با تم سبز روشن */
+    text-align: left;
 }
-/* عنوان اصلی */
-h1{margin:0 0 5px;font-size:26px;color: var(--primary-color);text-align: center;font-weight: 800;} /* سبز */
-/* زیرعنوان/بیزینس */
-h2{margin:0 0 15px;font-size:18px;color: var(--secondary-color);font-weight:600;text-align: center;} /* طلایی */
+/* عنوان فارسی (مرکز چین برای زیبایی) */
+h1{
+    margin:0 0 5px;
+    font-size:28px;
+    color: var(--dark-green);
+    text-align: center; 
+    font-weight: 900;
+    direction: rtl; 
+} 
+/* زیرعنوان/محصول */
+h2{
+    margin:0 0 25px;
+    font-size:16px;
+    color: var(--primary-green);
+    font-weight: 500;
+    text-align: center;
+    direction: rtl; 
+} 
 
-/* بخش تماس‌ها (افراد) */
-.person-group {
-    border: 1px solid #eee;
-    border-radius: 10px;
+/* کادر اطلاعات عمومی و لینک‌ها */
+.general-info {
     padding: 15px;
-    margin-bottom: 20px;
-    background: #fcfcfc;
+    background: var(--dark-green); 
+    border-radius: 15px;
+    margin-bottom: 25px;
+    color: var(--text-light);
+    direction: rtl;
+    text-align: right;
 }
-.person-title {
+.general-info strong {
     font-size: 16px;
-    font-weight: 700;
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--secondary-color);
-    padding-bottom: 5px;
+    display: block;
     margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
+    font-weight: 600;
 }
-
 .contact-item {
     padding: 5px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 15px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
 }
-.contact-label {
-    font-weight: 500;
-    color: var(--text-dark);
+.contact-item:last-child {
+    border-bottom: none;
+}
+.tel-label {
     font-size: 14px;
+    font-weight: 300;
 }
-/* برای شماره تلفن و ایمیل (جهت ltr) */
 .ltr-text {
-    direction: ltr; 
-    display: inline-block; 
+    direction: ltr;
     font-weight: bold; 
-    color: var(--text-dark); 
+    color: var(--text-light);
     text-decoration: none;
-}
-.ltr-text.highlight {
-    color: var(--secondary-color); /* طلایی برای شماره‌های مهم */
-}
-.ltr-text.primary {
-    color: var(--primary-color); /* سبز برای شماره‌های اصلی */
+    font-size: 16px;
 }
 
-/* لینک‌های ارتباطی و وبسایت */
+/* لینک‌های ارتباطی */
 .links{
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap:10px;
-    margin-top:20px;
+    margin-top:15px;
 }
 .links a{
-    padding:12px;
-    font-size:16px;
-    border-radius:10px;
+    padding:10px;
+    font-size:15px;
+    border-radius:8px;
     text-decoration:none;
-    color:var(--text-light);
+    color:var(--text-dark); /* متن لینک‌ها تیره تر */
     font-weight:bold;
     text-align: center;
     transition:all 0.3s;
-    font-family:'Vazirmatn', sans-serif;
-    background: var(--primary-color); /* سبز */
+    background: var(--gold);
+    direction: rtl;
 }
-.links a.website {background: var(--secondary-color);} /* طلایی برای وبسایت */
-.links a:hover{opacity: 0.9;}
+.links a:first-child {background: #fbc02d;} /* طلایی کمی تیره تر برای تمایز */
+.links a:hover{opacity: 0.8;}
 
-/* دکمه اصلی (ذخیره مخاطب) */
-#saveBtn{
+
+/* بخش تماس‌ها (افراد) */
+.person-group {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fcfcfc;
+}
+.person-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl;
+}
+.person-title span:first-child {
+    color: var(--dark-green);
+}
+.person-title span:last-child {
+    font-weight: 500;
+    color: #666;
+    font-size: 13px;
+}
+
+/* استایل جدید برای کادر شماره موبایل و دکمه ذخیره */
+.mobile-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    direction: rtl;
+}
+.mobile-line > span {
+    font-size: 14px;
+    color: #666;
+    direction: rtl;
+    margin-left: auto;
+}
+.mobile-info {
+    display: flex;
+    align-items: center;
+    direction: ltr;
+}
+
+.mobile-number {
+    font-size: 17px;
+    color: var(--text-dark);
+    margin-left: 10px;
+    font-weight: 800;
+}
+/* استایل دکمه ذخیره کوچک */
+.save-individual-btn {
+    background: var(--primary-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+.save-individual-btn:hover {
+    background: #43a047; /* سبز کمی تیره تر */
+}
+.save-individual-btn::before {
+    content: "💾";
+    margin: 0 2px;
+}
+
+/* دکمه ذخیره همه - تنظیم فونت وزیر برای متن فارسی */
+#saveAllBtn{
     margin-top:25px;
     padding:16px;
-    font-size:18px;
+    font-size:17px;
     border:none;
     border-radius:12px;
-    background: var(--primary-color); /* سبز */
+    background: var(--dark-green);
     color:var(--text-light);
     cursor:pointer;
     width:100%;
     font-weight: 700;
     transition:background 0.3s;
+    direction: rtl;
     font-family:'Vazirmatn', sans-serif;
 }
-#saveBtn:hover{background:#1e8d35;}
+#saveAllBtn:hover{background:#1b5e20;} /* سبز تیره تر */
 </style>
 </head>
 <body>
 
 <div class="card">
-  <h1>ریما پلاستیک</h1>
-  <h2>تولید محصولات خانه و آشپزخانه (Rima Plastic)</h2>
-  
-  <div class="links">
-    <a href="http://www.rimaco.blogfa.com" target="_blank" class="website">🌐 وبسایت / بلاگ</a>
-    <a href="https://www.instagram.com/rima.plastic" target="_blank" style="background:#E1306C;">📸 اینستاگرام</a>
-  </div>
-  
-  <div class="person-group" style="margin-top:20px;">
-      <div class="person-title" style="border-bottom: none; margin-bottom: 0;">
-          <span>📞 تماس‌های عمومی و مشترک:</span>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">دفتر مرکزی (مشترک):</span>
-          <a href="tel:+982165584812" class="ltr-text primary">021 6558 4812</a>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">دفتر (علیرضا فرجی):</span>
-          <a href="tel:+982165585701" class="ltr-text primary">021 6558 5701</a>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">شماره سفارشات:</span>
-          <a href="tel:+989358018118" class="ltr-text highlight">0935 801 8118</a>
-      </div>
-  </div>
+    <h1>ریما پلاستیک</h1>
+    <h2>تولید محصولات خانه و آشپزخانه</h2>
+    
+    <div class="general-info">
+        <strong>اطلاعات تماس و لینک‌ها:</strong>
+        <div class="contact-item">
+            <span class="tel-label">تلفن دفتر:</span>
+            <a href="tel:+982165584812" class="ltr-text">021 6558 4812</a>
+        </div>
+        <div class="contact-item">
+            <span class="tel-label">شماره سفارشات:</span>
+            <a href="tel:+989358018118" class="ltr-text">0935 801 8118</a>
+        </div>
+        <div class="links">
+            <a href="http://www.rimaco.blogfa.com" target="_blank">🌐 وبسایت</a>
+            <a href="mailto:F7610F@gmail.com" target="_blank" style="background:#ef5350;">📧 ایمیل</a>
+        </div>
+    </div>
 
-  <div class="person-group">
-      <div class="person-title">
-          <span>آقا یاسین دیزآبادی</span>
-          </div>
-      <div class="contact-item">
-          <span class="contact-label">تلفن همراه:</span>
-          <a href="tel:+989024444639" class="ltr-text primary">0902 444 4639</a>
-      </div>
-  </div>
-  
-  <div class="person-group">
-      <div class="person-title">
-          <span>آقای محمدرضا خدابنده</span>
-          <span style="color: #666; font-weight: 500;">مدیر تولید</span>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">تلفن همراه:</span>
-          <a href="tel:+989355850095" class="ltr-text">0935 585 0095</a>
-      </div>
-  </div>
-  
-  <div class="person-group">
-      <div class="person-title">
-          <span>آقای مسعود راسخ عزم</span>
-          <span style="color: #666; font-weight: 500;">مدیر فروش</span>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">تلفن همراه:</span>
-          <a href="tel:+989122181867" class="ltr-text">0912 218 1867</a>
-      </div>
-  </div>
+    <div class="person-group">
+        <div class="person-title">
+            <span>علی فرجی</span>
+            <span>مدیر عامل</span>
+        </div>
+        <div class="mobile-line">
+            <span>موبایل:</span>
+            <div class="mobile-info">
+                <a href="tel:+989122012562" class="ltr-text mobile-number">0912 201 2562</a>
+                <button class="save-individual-btn" data-person="aliFaraji1"></button>
+            </div>
+        </div>
+        <div class="mobile-line" style="margin-top: 5px;">
+            <span>موبایل دیگر:</span>
+            <div class="mobile-info">
+                <a href="tel:+989353822777" class="ltr-text mobile-number">0935 382 2777</a>
+            </div>
+        </div>
+        <div class="mobile-line" style="margin-top: 5px;">
+            <span>ایمیل:</span>
+            <div class="mobile-info">
+                <a href="mailto:F7610F@gmail.com" class="ltr-text mobile-number" style="font-size:15px;">F7610F@gmail.com</a>
+            </div>
+        </div>
+    </div>
 
-  <div class="person-group">
-      <div class="person-title">
-          <span>علیرضا فرجی</span>
-          <span style="color: #666; font-weight: 500;">مدیر تولید</span>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">تلفن همراه:</span>
-          <a href="tel:+989122818287" class="ltr-text">0912 281 8287</a>
-      </div>
-  </div>
-  
-  <div class="person-group">
-      <div class="person-title">
-          <span>علی فرجی</span>
-          <span style="color: #666; font-weight: 500;">(شخصی/مدیر)</span>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">همراه ۱:</span>
-          <a href="tel:+989122012562" class="ltr-text">0912 201 2562</a>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">همراه ۲:</span>
-          <a href="tel:+989353822777" class="ltr-text">0935 382 2777</a>
-      </div>
-      <div class="contact-item">
-          <span class="contact-label">ایمیل:</span>
-          <a href="mailto:F7610F@gmail.com" class="ltr-text">F7610F@gmail.com</a>
-      </div>
-  </div>
+    <div class="person-group">
+        <div class="person-title">
+            <span>علیرضا فرجی</span>
+            <span>مدیر تولید</span>
+        </div>
+        <div class="mobile-line">
+            <span>موبایل:</span>
+            <div class="mobile-info">
+                <a href="tel:+989122818287" class="ltr-text mobile-number">0912 281 8287</a>
+                <button class="save-individual-btn" data-person="alirezaFaraji"></button>
+            </div>
+        </div>
+    </div>
 
-
-  <button id="saveBtn">📇 ذخیره مخاطب (دفتر ریما پلاستیک)</button>
+    <div class="person-group">
+        <div class="person-title">
+            <span>آقا یاسین دیزآبادی</span>
+            <span>-</span>
+        </div>
+        <div class="mobile-line">
+            <span>موبایل:</span>
+            <div class="mobile-info">
+                <a href="tel:+989024444639" class="ltr-text mobile-number">0902 444 4639</a>
+                <button class="save-individual-btn" data-person="yasinDizabadi"></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="person-group">
+        <div class="person-title">
+            <span>محمدرضا خدابنده</span>
+            <span>مدیر تولید</span>
+        </div>
+        <div class="mobile-line">
+            <span>موبایل:</span>
+            <div class="mobile-info">
+                <a href="tel:+989355850095" class="ltr-text mobile-number">0935 585 0095</a>
+                <button class="save-individual-btn" data-person="mohammadrezaKhodabande"></button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="person-group">
+        <div class="person-title">
+            <span>مسعود راسخ عزم</span>
+            <span>مدیر فروش</span>
+        </div>
+        <div class="mobile-line">
+            <span>موبایل:</span>
+            <div class="mobile-info">
+                <a href="tel:+989122181867" class="ltr-text mobile-number">0912 218 1867</a>
+                <button class="save-individual-btn" data-person="masoudRasekhAzm"></button>
+            </div>
+        </div>
+    </div>
+    
+    <button id="saveAllBtn">📇 ذخیره همه مخاطبین به صورت یکجا</button>
 </div>
 
 <script>
-document.getElementById('saveBtn').addEventListener('click', () => {
-  // ساختار vCard برای ذخیره اطلاعات تمامی افراد اصلی شرکت
-  const vcard = 
+// اطلاعات ثابت شرکت برای استفاده در VCF
+const companyInfo = {
+    ORG: 'ریما پلاستیک',
+    OFFICE_TEL: '+982165584812',
+    ORDER_TEL: '+989358018118',
+    WEBSITE: 'http://www.rimaco.blogfa.com',
+    EMAIL: 'F7610F@gmail.com', // Added company email for comprehensive VCF
+};
+
+// داده‌های هر فرد
+const contactsData = {
+    aliFaraji1: { // Renamed for clarity, since there are two Ali Farajis in the original data
+        N: 'فرجی;علی;;;',
+        FN: 'علی فرجی - مدیر عامل ریما پلاستیک',
+        TITLE: 'مدیر عامل',
+        TEL: '+989122012562',
+        TEL2: '+989353822777', // Added second mobile number
+        EMAIL: 'F7610F@gmail.com', // Specific email for Ali Faraji
+        filename: 'AliFaraji_CEO_RimaPlastic.vcf'
+    },
+    alirezaFaraji: {
+        N: 'فرجی;علیرضا;;;',
+        FN: 'علیرضا فرجی - مدیر تولید ریما پلاستیک',
+        TITLE: 'مدیر تولید',
+        TEL: '+989122818287',
+        OFFICE_TEL: '+982165585701', // Specific office tel for Alireza Faraji
+        filename: 'AlirezaFaraji_ProductionManager_RimaPlastic.vcf'
+    },
+    yasinDizabadi: {
+        N: 'دیزآبادی;یاسین;;;',
+        FN: 'آقا یاسین دیزآبادی - ریما پلاستیک',
+        TITLE: '', // No specific title provided
+        TEL: '+989024444639',
+        filename: 'YasinDizabadi_RimaPlastic.vcf'
+    },
+    mohammadrezaKhodabande: {
+        N: 'خدابنده;محمدرضا;;;',
+        FN: 'محمدرضا خدابنده - مدیر تولید ریما پلاستیک',
+        TITLE: 'مدیر تولید',
+        TEL: '+989355850095',
+        filename: 'MohammadrezaKhodabande_RimaPlastic.vcf'
+    },
+    masoudRasekhAzm: {
+        N: 'راسخ عزم;مسعود;;;',
+        FN: 'مسعود راسخ عزم - مدیر فروش ریما پلاستیک',
+        TITLE: 'مدیر فروش',
+        TEL: '+989122181867',
+        filename: 'MasoudRasekhAzm_RimaPlastic.vcf'
+    }
+};
+
+// تابع ساخت و دانلود VCF برای یک نفر (با افزودن تمام اطلاعات درخواستی)
+function downloadVcf(personKey) {
+    const data = contactsData[personKey];
+    const company = companyInfo;
+    
+    let vcard = 
 `BEGIN:VCARD
 VERSION:3.0
-N:دیزآبادی;یاسین;;;
-FN:آقا یاسین دیزآبادی - ریما پلاستیک
-ORG:ریما پلاستیک - Rima Plastic
-TITLE:مسئول
-TEL;TYPE=CELL;TYPE=PREF:+989024444639
-TEL;TYPE=CELL:+989358018118 ; سفارشات
-TEL;TYPE=WORK;TYPE=VOICE:+982165584812 ; دفتر
-URL;TYPE=WEBSITE:http://www.rimaco.blogfa.com
-URL;TYPE=INSTAGRAM:https://www.instagram.com/rima.plastic
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-N:خدابنده;محمدرضا;;;
-FN:محمدرضا خدابنده - مدیر تولید
-ORG:ریما پلاستیک - Rima Plastic
-TITLE:مدیر تولید
-TEL;TYPE=CELL:+989355850095
-TEL;TYPE=CELL:+989358018118 ; سفارشات
-TEL;TYPE=WORK;TYPE=VOICE:+982165584812 ; دفتر
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-N:راسخ عزم;مسعود;;;
-FN:مسعود راسخ عزم - مدیر فروش
-ORG:ریما پلاستیک - Rima Plastic
-TITLE:مدیر فروش
-TEL;TYPE=CELL:+989122181867
-TEL;TYPE=CELL:+989358018118 ; سفارشات
-TEL;TYPE=WORK;TYPE=VOICE:+982165584812 ; دفتر
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-N:فرجی;علیرضا;;;
-FN:علیرضا فرجی - مدیر تولید
-ORG:ریما پلاستیک - Rima Plastic
-TITLE:مدیر تولید
-TEL;TYPE=CELL:+989122818287
-TEL;TYPE=CELL:+989358018118 ; سفارشات
-TEL;TYPE=WORK;TYPE=VOICE:+982165585701 ; دفتر
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-N:فرجی;علی;;;
-FN:علی فرجی
-ORG:ریما پلاستیک - Rima Plastic
-TITLE:مسئول
-TEL;TYPE=CELL:+989122012562
-TEL;TYPE=CELL:+989353822777
-TEL;TYPE=CELL:+989358018118 ; سفارشات
-TEL;TYPE=WORK;TYPE=VOICE:+982165584812 ; دفتر
-EMAIL;TYPE=WORK:F7610F@gmail.com
-END:VCARD
-`;
+N:${data.N}
+FN:${data.FN}
+ORG:${company.ORG}`;
 
-  // ایجاد و دانلود فایل VCF
-  const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'RimaPlastic_Contacts.vcf';
-  document.body.appendChild(a);
-  a.click();
-  
-  // پاکسازی منابع
-  setTimeout(() => {
-    URL.revokeObjectURL(url);
-    a.remove();
-    alert('۵ مخاطب شامل تمام اطلاعات تماس ذخیره شدند!');
-  },1000);
+    if (data.TITLE) {
+        vcard += `\nTITLE:${data.TITLE}`;
+    }
+
+    vcard += `\nTEL;TYPE=CELL;TYPE=PREF:${data.TEL} ; شماره موبایل فرد`;
+    if (data.TEL2) {
+        vcard += `\nTEL;TYPE=CELL:${data.TEL2} ; شماره موبایل دوم فرد`;
+    }
+    vcard += `\nTEL;TYPE=WORK;TYPE=VOICE:${data.OFFICE_TEL || company.OFFICE_TEL} ; تلفن دفتر`;
+    vcard += `\nTEL;TYPE=WORK;TYPE=VOICE:${company.ORDER_TEL} ; شماره سفارشات`;
+
+    if (data.EMAIL || company.EMAIL) {
+        vcard += `\nEMAIL;TYPE=WORK:${data.EMAIL || company.EMAIL}`;
+    }
+    
+    vcard += `\nURL;TYPE=WEBSITE:${company.WEBSITE}`;
+    vcard += `\nEND:VCARD`;
+
+    const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = data.filename;
+    document.body.appendChild(a);
+    a.click();
+    
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+        alert('مخاطب ' + data.FN.split(' - ')[0] + ' با تمام جزئیات با موفقیت ذخیره شد!');
+    }, 500);
+}
+
+// گوش دادن به کلیک دکمه‌های مجزا
+document.querySelectorAll('.save-individual-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const personKey = e.currentTarget.getAttribute('data-person');
+        if (personKey) {
+            downloadVcf(personKey);
+        }
+    });
+});
+
+// **کد ذخیره همه (باقی می‌ماند):**
+document.getElementById('saveAllBtn').addEventListener('click', () => {
+    let vcardAllContent = "";
+    // Ensure the order of contacts in the generated VCF matches the display order
+    const orderedKeys = ['aliFaraji1', 'alirezaFaraji', 'yasinDizabadi', 'mohammadrezaKhodabande', 'masoudRasekhAzm'];
+
+    orderedKeys.forEach(key => {
+        const data = contactsData[key];
+        const company = companyInfo;
+
+        let personVcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:${data.N}
+FN:${data.FN}
+ORG:${company.ORG}`;
+
+        if (data.TITLE) {
+            personVcard += `\nTITLE:${data.TITLE}`;
+        }
+
+        personVcard += `\nTEL;TYPE=CELL;TYPE=PREF:${data.TEL}`;
+        if (data.TEL2) {
+            personVcard += `\nTEL;TYPE=CELL:${data.TEL2}`;
+        }
+        personVcard += `\nTEL;TYPE=WORK;TYPE=VOICE:${data.OFFICE_TEL || company.OFFICE_TEL}`;
+        personVcard += `\nTEL;TYPE=WORK;TYPE=VOICE:${company.ORDER_TEL}`;
+        
+        if (data.EMAIL || company.EMAIL) {
+            personVcard += `\nEMAIL;TYPE=WORK:${data.EMAIL || company.EMAIL}`;
+        }
+
+        personVcard += `\nURL;TYPE=WEBSITE:${company.WEBSITE}`;
+        personVcard += `\nEND:VCARD\n`;
+        vcardAllContent += personVcard;
+    });
+
+    const blob = new Blob([vcardAllContent], {type:'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'RimaPlastic_AllContacts.vcf';
+    document.body.appendChild(a);
+    a.click();
+    
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+        alert('همه مخاطبین ریما پلاستیک به صورت یکجا ذخیره شدند!');
+    },1000);
 });
 </script>
 
