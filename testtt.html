@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>پیشگام چاپ | تولید لیبل پشت چسبدار</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css">
+<style>
+/* --- تنظیمات اصلی چپ‌چین (LTR) --- */
+:root {
+    --dark-blue: #0A3C5C; /* آبی تیره عمیق‌تر */
+    --light-blue: #1DA1F2; /* آبی روشن زنده */
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f0f8ff; /* پس زمینه روشن‌تر */
+}
+
+body{
+    margin:0;
+    padding:0;
+    background: var(--bg-light);
+    font-family:'Vazirmatn', sans-serif; /* اعمال فونت وزیر به کل بدنه */
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:100vh;
+    direction: ltr; /* جهت کلی صفحه به چپ‌چین */
+    text-align: left; /* تراز کلی به چپ */
+}
+/* کارت اصلی */
+.card{
+    width:92%;
+    max-width:400px;
+    background: var(--text-light); 
+    border-radius:25px; 
+    padding:30px 25px;
+    box-shadow:0 15px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d4e3f2;
+    text-align: left;
+}
+/* عنوان فارسی (مرکز چین برای زیبایی) */
+h1{
+    margin:0 0 5px;
+    font-size:28px;
+    color: var(--dark-blue);
+    text-align: center; 
+    font-weight: 900;
+    direction: rtl; 
+} 
+/* زیرعنوان/محصول */
+h2{
+    margin:0 0 25px;
+    font-size:16px;
+    color: var(--light-blue);
+    font-weight: 500;
+    text-align: center;
+    direction: rtl; 
+} 
+
+/* کادر اطلاعات عمومی و لینک‌ها */
+.general-info {
+    padding: 15px;
+    background: var(--dark-blue); 
+    border-radius: 15px;
+    margin-bottom: 25px;
+    color: var(--text-light);
+    direction: rtl; /* کل کادر فارسی راست‌چین شود */
+    text-align: right;
+}
+.general-info strong {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.contact-item {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+.contact-item:last-child {
+    border-bottom: none;
+}
+.tel-label {
+    font-size: 14px;
+    font-weight: 300;
+}
+.ltr-text {
+    direction: ltr; /* شماره‌ها چپ‌چین باقی بمانند */
+    font-weight: bold; 
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* لینک‌های ارتباطی */
+.links{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    margin-top:15px;
+}
+.links a{
+    padding:10px;
+    font-size:15px;
+    border-radius:8px;
+    text-decoration:none;
+    color:var(--text-light);
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    background: var(--light-blue);
+    direction: rtl;
+}
+.links a:first-child {background: #879ab5;} 
+.links a:hover{opacity: 0.8;}
+
+
+/* بخش تماس‌ها (افراد) */
+.person-group {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #fcfcfc;
+}
+.person-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    direction: rtl; /* کل عنوان فرد راست‌چین */
+}
+.person-title span:first-child {
+    color: var(--dark-blue);
+}
+.person-title span:last-child {
+    font-weight: 500;
+    color: #666;
+    font-size: 13px;
+}
+
+/* استایل جدید برای کادر شماره موبایل و دکمه ذخیره */
+.mobile-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+    direction: rtl; /* جهت کلی موبایل لاین راست‌چین شود */
+}
+.mobile-line > span {
+    font-size: 14px;
+    color: #666;
+    direction: rtl;
+    margin-left: auto; /* برای هل دادن برچسب موبایل به سمت راست */
+}
+.mobile-info {
+    display: flex;
+    align-items: center;
+    direction: ltr; /* موبایل و دکمه آن چپ‌چین باقی می‌ماند */
+}
+
+.mobile-number {
+    font-size: 17px;
+    color: var(--text-dark);
+    margin-left: 10px;
+    font-weight: 800;
+}
+/* استایل دکمه ذخیره کوچک */
+.save-individual-btn {
+    background: var(--light-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+.save-individual-btn:hover {
+    background: #008cd6;
+}
+.save-individual-btn::before {
+    content: "💾";
+    margin: 0 2px;
+}
+
+/* دکمه ذخیره همه - تنظیم فونت وزیر برای متن فارسی */
+#saveAllBtn{
+    margin-top:25px;
+    padding:16px;
+    font-size:17px;
+    border:none;
+    border-radius:12px;
+    background: var(--dark-blue);
+    color:var(--text-light);
+    cursor:pointer;
+    width:100%;
+    font-weight: 700;
+    transition:background 0.3s;
+    direction: rtl;
+    font-family:'Vazirmatn', sans-serif; /* اطمینان از اعمال فونت وزیر */
+}
+#saveAllBtn:hover{background:#002244;}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>شرکت پیشگام چاپ</h1>
+  <h2>تولید کننده لیبل پشت چسب دار رول</h2>
+  
+  <div class="general-info">
+      <strong>اطلاعات تماس و لینک‌ها:</strong>
+      <div class="contact-item">
+          <span class="tel-label">تلفن دفتر ۱:</span>
+          <a href="tel:+982146812806" class="ltr-text">021 4681 2806</a>
+      </div>
+      <div class="contact-item">
+          <span class="tel-label">تلفن دفتر ۲:</span>
+          <a href="tel:+982146812807" class="ltr-text">021 4681 2807</a>
+      </div>
+      <div class="links">
+        <a href="http://www.pishgamchap.com" target="_blank">🌐 وبسایت</a>
+        <a href="https://www.instagram.com/pishgam.chap" target="_blank" style="background:#E1306C;">📸 اینستاگرام</a>
+      </div>
+  </div>
+
+  <div class="person-group">
+      <div class="person-title">
+          <span>احمد رضا فتوحی</span>
+          <span>مدیر کارخانه</span>
+      </div>
+      <div class="mobile-line">
+          <span>موبایل:</span>
+          <div class="mobile-info">
+            <a href="tel:+989121467833" class="ltr-text mobile-number">0912 146 7833</a>
+            <button class="save-individual-btn" data-person="ahmadfotouhi"></button>
+          </div>
+      </div>
+  </div>
+  
+  <div class="person-group">
+      <div class="person-title">
+          <span>تقی مصطفی نیا</span>
+          <span>مدیر عامل</span>
+      </div>
+      <div class="mobile-line">
+          <span>موبایل:</span>
+          <div class="mobile-info">
+            <a href="tel:+989127789929" class="ltr-text mobile-number">0912 778 9929</a>
+            <button class="save-individual-btn" data-person="taghimostafania"></button>
+          </div>
+      </div>
+  </div>
+  
+  <div class="person-group">
+      <div class="person-title">
+          <span>حضرت قلی رحیمی</span>
+          <span>رئیس هیات مدیره</span>
+      </div>
+      <div class="mobile-line">
+          <span>موبایل:</span>
+          <div class="mobile-info">
+            <a href="tel:+989121058504" class="ltr-text mobile-number">0912 105 8504</a>
+            <button class="save-individual-btn" data-person="hazratrahimi"></button>
+          </div>
+      </div>
+  </div>
+
+  <div class="person-group">
+      <div class="person-title">
+          <span>علی ساسانی</span>
+          <span>مدیر تولید و فروش</span>
+      </div>
+      <div class="mobile-line">
+          <span>موبایل:</span>
+          <div class="mobile-info">
+            <a href="tel:+989121968991" class="ltr-text mobile-number">0912 196 8991</a>
+            <button class="save-individual-btn" data-person="alisasani"></button>
+          </div>
+      </div>
+  </div>
+  
+  <div class="person-group">
+      <div class="person-title">
+          <span>امید خواجه نوری</span>
+          <span>مسئول امور مشتریان</span>
+      </div>
+      <div class="mobile-line">
+          <span>موبایل:</span>
+          <div class="mobile-info">
+            <a href="tel:+989121122868" class="ltr-text mobile-number">0912 112 2868</a>
+            <button class="save-individual-btn" data-person="omidkhajenouri"></button>
+          </div>
+      </div>
+  </div>
+
+
+  <button id="saveAllBtn">📇 ذخیره همه مخاطبین به صورت یکجا</button>
+</div>
+
+<script>
+// اطلاعات ثابت شرکت برای استفاده در VCF
+const companyInfo = {
+    ORG: 'پیشگام چاپ',
+    OFFICE_TEL: '+982146812806',
+    WEBSITE: 'http://www.pishgamchap.com',
+    INSTAGRAM: 'https://www.instagram.com/pishgam.chap',
+};
+
+// داده‌های هر فرد
+const contactsData = {
+    ahmadfotouhi: {
+        N: 'فتوحی;احمد رضا;;;',
+        FN: 'احمد رضا فتوحی - مدیر کارخانه پیشگام چاپ',
+        TITLE: 'مدیر کارخانه',
+        TEL: '+989121467833',
+        filename: 'AhmadFotouhi_PishgamChap.vcf'
+    },
+    taghimostafania: {
+        N: 'مصطفی نیا;تقی;;;',
+        FN: 'تقی مصطفی نیا - مدیر عامل پیشگام چاپ',
+        TITLE: 'مدیر عامل',
+        TEL: '+989127789929',
+        filename: 'TaghiMostafania_PishgamChap.vcf'
+    },
+    hazratrahimi: {
+        N: 'رحیمی;حضرت قلی;;;',
+        FN: 'حضرت قلی رحیمی - رئیس هیات مدیره پیشگام چاپ',
+        TITLE: 'رئیس هیات مدیره',
+        TEL: '+989121058504',
+        filename: 'HazratRahimi_PishgamChap.vcf'
+    },
+    alisasani: {
+        N: 'ساسانی;علی;;;',
+        FN: 'علی ساسانی - مدیر تولید و فروش پیشگام چاپ',
+        TITLE: 'مدیر تولید و فروش',
+        TEL: '+989121968991',
+        filename: 'AliSasani_PishgamChap.vcf'
+    },
+    omidkhajenouri: {
+        N: 'خواجه نوری;امید;;;',
+        FN: 'امید خواجه نوری - مسئول امور مشتریان پیشگام چاپ',
+        TITLE: 'مسئول امور مشتریان',
+        TEL: '+989121122868',
+        filename: 'OmidKhajenouri_PishgamChap.vcf'
+    }
+};
+
+// تابع ساخت و دانلود VCF برای یک نفر (با افزودن تمام اطلاعات درخواستی)
+function downloadVcf(personKey) {
+    const data = contactsData[personKey];
+    const company = companyInfo;
+    
+    // ساخت VCF کامل: نام، شماره، سمت، شرکت، شماره دفتر، وبسایت، اینستاگرام
+    const vcard = 
+`BEGIN:VCARD
+VERSION:3.0
+N:${data.N}
+FN:${data.FN}
+ORG:${company.ORG}
+TITLE:${data.TITLE}
+TEL;TYPE=CELL;TYPE=PREF:${data.TEL} ; شماره موبایل فرد
+TEL;TYPE=WORK;TYPE=VOICE:${company.OFFICE_TEL} ; شماره دفتر مشترک
+URL;TYPE=WEBSITE:${company.WEBSITE}
+X-SOCIALPROFILE;TYPE=instagram:${company.INSTAGRAM}
+END:VCARD`;
+
+    const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = data.filename;
+    document.body.appendChild(a);
+    a.click();
+    
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+        alert('مخاطب ' + data.FN.split(' - ')[0] + ' با تمام جزئیات با موفقیت ذخیره شد!');
+    }, 500);
+}
+
+// گوش دادن به کلیک دکمه‌های مجزا
+document.querySelectorAll('.save-individual-btn').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const personKey = e.currentTarget.getAttribute('data-person');
+        if (personKey) {
+            downloadVcf(personKey);
+        }
+    });
+});
+
+
+// **کد ذخیره همه (باقی می‌ماند):**
+document.getElementById('saveAllBtn').addEventListener('click', () => {
+  const vcardAll = 
+`BEGIN:VCARD
+VERSION:3.0
+N:فتوحی;احمد رضا;;;
+FN:احمد رضا فتوحی - مدیر کارخانه پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:مدیر کارخانه
+TEL;TYPE=CELL;TYPE=PREF:+989121467833
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+URL;TYPE=WEBSITE:http://www.pishgamchap.com
+URL;TYPE=INSTAGRAM:https://www.instagram.com/pishgam.chap
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:مصطفی نیا;تقی;;;
+FN:تقی مصطفی نیا - مدیر عامل پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:مدیر عامل
+TEL;TYPE=CELL;TYPE=PREF:+989127789929
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:رحیمی;حضرت قلی;;;
+FN:حضرت قلی رحیمی - رئیس هیات مدیره پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:رئیس هیات مدیره
+TEL;TYPE=CELL;TYPE=PREF:+989121058504
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:ساسانی;علی;;;
+FN:علی ساسانی - مدیر تولید و فروش پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:مدیر تولید و فروش
+TEL;TYPE=CELL;TYPE=PREF:+989121968991
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+END:VCARD
+BEGIN:VCARD
+VERSION:3.0
+N:خواجه نوری;امید;;;
+FN:امید خواجه نوری - مسئول امور مشتریان پیشگام چاپ
+ORG:پیشگام چاپ
+TITLE:مسئول امور مشتریان
+TEL;TYPE=CELL;TYPE=PREF:+989121122868
+TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
+END:VCARD`;
+
+  const blob = new Blob([vcardAll], {type:'text/vcard;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'PishgamChap_AllContacts.vcf';
+  document.body.appendChild(a);
+  a.click();
+  
+  setTimeout(() => {
+    URL.revokeObjectURL(url);
+    alert('۵ مخاطب به صورت یکجا ذخیره شدند!');
+  },1000);
+});
+</script>
+
+</body>
+</html>
