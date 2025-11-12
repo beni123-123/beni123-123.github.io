@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en"> 
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pishgam Chap | Ahmad Reza Fotouhi</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.0.3/Vazirmatn.css"> 
+<style>
+/* --- Minimal LTR Styles --- */
+:root {
+    --dark-blue: #0A3C5C;
+    --light-blue: #1DA1F2;
+    --text-dark: #333;
+    --text-light: #fff;
+    --bg-light: #f0f8ff;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg-light);
+    font-family: 'Vazirmatn', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    direction: ltr; 
+    text-align: left;
+}
+.card {
+    width: 92%;
+    max-width: 400px;
+    background: var(--text-light);
+    border-radius: 25px;
+    padding: 30px 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid #d4e3f2;
+}
+h1 {
+    margin: 0 0 5px;
+    font-size: 28px;
+    color: var(--dark-blue);
+    text-align: center;
+    font-weight: 900;
+}
+h2 {
+    margin: 0 0 25px;
+    font-size: 16px;
+    color: var(--light-blue);
+    font-weight: 500;
+    text-align: center;
+}
+/* General Info Box (Fully LTR) */
+.general-info {
+    padding: 15px;
+    background: var(--dark-blue);
+    border-radius: 15px;
+    margin-bottom: 25px;
+    color: var(--text-light);
+    direction: ltr; /* Changed to LTR */
+    text-align: left; /* Changed to Left */
+}
+.general-info strong {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.contact-item {
+    padding: 5px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+}
+.contact-item:last-child { border-bottom: none; }
+.tel-label { font-size: 14px; font-weight: 300; }
+.ltr-text {
+    direction: ltr;
+    font-weight: bold;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 16px;
+}
+/* Links Section */
+.links{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+    margin-top:15px;
+}
+.links a{
+    padding:10px;
+    font-size:15px;
+    border-radius:8px;
+    text-decoration:none;
+    color:var(--text-light);
+    font-weight:bold;
+    text-align: center;
+    transition:all 0.3s;
+    background: var(--light-blue);
+    direction: ltr;
+}
+.links a:first-child {background: #879ab5;} 
+.links a:hover{opacity: 0.8;}
+
+/* Person Specific Styles */
+.person-group {
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 15px;
+    background: #fcfcfc;
+}
+.person-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    direction: ltr; 
+}
+.person-title span:first-child { color: var(--dark-blue); }
+.person-title span:last-child { font-weight: 500; color: #666; font-size: 13px; }
+
+/* Mobile Line (Fully LTR) */
+.mobile-line {
+    display: flex;
+    justify-content: flex-start; /* Start from the left */
+    align-items: center;
+    padding-top: 5px;
+    direction: ltr; /* Changed to LTR */
+}
+.mobile-line > span { /* Mobile label */
+    font-size: 14px; 
+    color: #666; 
+    direction: ltr;
+    margin-right: 10px; /* Space after label */
+    margin-left: 0; 
+}
+.mobile-info {
+    display: flex;
+    align-items: center;
+    direction: ltr;
+}
+.mobile-number { 
+    font-size: 17px; 
+    color: var(--text-dark); 
+    margin-left: 0; 
+    margin-right: 10px; /* Space before button */
+    font-weight: 800; 
+}
+.save-individual-btn {
+    background: var(--light-blue);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+.save-individual-btn:hover { background: #008cd6; }
+.save-individual-btn::before { content: "💾 Save"; margin: 0 2px; }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Pishgam Chap Co.</h1>
+  <h2>Roll Adhesive Label Manufacturer</h2>
+  
+  <div class="general-info">
+      <strong>Company Contact Info & Links:</strong>
+      <div class="contact-item">
+          <span class="tel-label">Office Tel 1:</span>
+          <a href="tel:+982146812806" class="ltr-text">021 4681 2806</a>
+      </div>
+      <div class="contact-item">
+          <span class="tel-label">Office Tel 2:</span>
+          <a href="tel:+982146812807" class="ltr-text">021 4681 2807</a>
+      </div>
+      <div class="links">
+        <a href="http://www.pishgamchap.com" target="_blank" style="background: #879ab5;">🌐 Website</a>
+        <a href="https://www.instagram.com/pishgam.chap" target="_blank" style="background:#E1306C;">📸 Instagram</a>
+      </div>
+  </div>
+
+  <div class="person-group">
+      <div class="person-title">
+          <span>Ahmad Reza Fotouhi</span>
+          <span>Factory Manager</span>
+      </div>
+      <div class="mobile-line">
+          <span>Mobile:</span>
+          <div class="mobile-info">
+            <a href="tel:+989121467833" class="ltr-text mobile-number">0912 146 7833</a>
+            <button class="save-individual-btn" data-person="ahmadfotouhi"></button>
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+// Company Static Data
+const companyInfo = {
+    ORG: 'Pishgam Chap Co.',
+    OFFICE_TEL: '+982146812806',
+    WEBSITE: 'http://www.pishgamchap.com',
+    INSTAGRAM: 'https://www.instagram.com/pishgam.chap',
+};
+
+// Data for Ahmad Reza Fotouhi (in Latin)
+const contactsData = {
+    ahmadfotouhi: {
+        N: 'Fotouhi;Ahmad Reza;;;',
+        FN: 'Ahmad Reza Fotouhi - Pishgam Chap Factory Manager',
+        TITLE: 'Factory Manager',
+        TEL: '+989121467833',
+        filename: 'AhmadRezaFotouhi_PishgamChap.vcf'
+    }
+};
+
+// Function to build and download VCF
+function downloadVcf(personKey) {
+    const data = contactsData[personKey];
+    const company = companyInfo;
+    
+    // Build VCF card
+    const vcard =    
+`BEGIN:VCARD
+VERSION:3.0
+N:${data.N}
+FN:${data.FN}
+ORG:${company.ORG}
+TITLE:${data.TITLE}
+TEL;TYPE=CELL;TYPE=PREF:${data.TEL}
+TEL;TYPE=WORK;TYPE=VOICE:${company.OFFICE_TEL}
+URL;TYPE=WEBSITE:${company.WEBSITE}
+X-SOCIALPROFILE;TYPE=instagram:${company.INSTAGRAM}
+END:VCARD`;
+
+    const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = data.filename;
+    document.body.appendChild(a);
+    a.click();
+    
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+        // Alert message is now fully in English
+        alert(data.FN.split(' - ')[0] + ' contact saved successfully!');
+    }, 500);
+}
+
+// Event listener for the save button
+document.querySelector('.save-individual-btn').addEventListener('click', (e) => {
+    const personKey = e.currentTarget.getAttribute('data-person');
+    if (personKey) {
+        downloadVcf(personKey);
+    }
+});
+</script>
+
+</body>
+</html>
