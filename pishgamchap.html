@@ -31,8 +31,8 @@ body{
 .card{
     width:92%;
     max-width:400px;
-    background: var(--text-light); 
-    border-radius:25px; 
+    background: var(--text-light);    
+    border-radius:25px;    
     padding:30px 25px;
     box-shadow:0 15px 40px rgba(0, 0, 0, 0.1);
     border: 1px solid #d4e3f2;
@@ -43,10 +43,10 @@ h1{
     margin:0 0 5px;
     font-size:28px;
     color: var(--dark-blue);
-    text-align: center; 
+    text-align: center;    
     font-weight: 900;
-    direction: rtl; 
-} 
+    direction: rtl;    
+}    
 /* زیرعنوان/محصول */
 h2{
     margin:0 0 25px;
@@ -54,13 +54,13 @@ h2{
     color: var(--light-blue);
     font-weight: 500;
     text-align: center;
-    direction: rtl; 
-} 
+    direction: rtl;    
+}    
 
 /* کادر اطلاعات عمومی و لینک‌ها */
 .general-info {
     padding: 15px;
-    background: var(--dark-blue); 
+    background: var(--dark-blue);    
     border-radius: 15px;
     margin-bottom: 25px;
     color: var(--text-light);
@@ -89,7 +89,7 @@ h2{
 }
 .ltr-text {
     direction: ltr; /* شماره‌ها چپ‌چین باقی بمانند */
-    font-weight: bold; 
+    font-weight: bold;    
     color: var(--text-light);
     text-decoration: none;
     font-size: 16px;
@@ -114,7 +114,7 @@ h2{
     background: var(--light-blue);
     direction: rtl;
 }
-.links a:first-child {background: #879ab5;} 
+.links a:first-child {background: #879ab5;}    
 .links a:hover{opacity: 0.8;}
 
 
@@ -302,6 +302,34 @@ h2{
       </div>
   </div>
 
+  <div class="person-group">
+      <div class="person-title">
+          <span>سمیرا کریمی</span>
+          <span>مدیر مالی</span>
+      </div>
+      <div class="mobile-line">
+          <span>موبایل:</span>
+          <div class="mobile-info">
+            <a href="tel:+989127652284" class="ltr-text mobile-number">0912 765 2284</a>
+            <button class="save-individual-btn" data-person="samiraKarimi"></button>
+          </div>
+      </div>
+  </div>
+  
+  <div class="person-group">
+      <div class="person-title">
+          <span>سید علی فاطمی</span>
+          <span>فروش</span>
+      </div>
+      <div class="mobile-line">
+          <span>موبایل:</span>
+          <div class="mobile-info">
+            <a href="tel:+989122769567" class="ltr-text mobile-number">0912 276 9567</a>
+            <button class="save-individual-btn" data-person="seyedAliFatemi"></button>
+          </div>
+      </div>
+  </div>
+
 
   <button id="saveAllBtn">📇 ذخیره همه مخاطبین به صورت یکجا</button>
 </div>
@@ -351,6 +379,22 @@ const contactsData = {
         TITLE: 'مسئول امور مشتریان',
         TEL: '+989121122868',
         filename: 'OmidKhajenouri_PishgamChap.vcf'
+    },
+    // *** شخص جدید ۱ ***
+    samiraKarimi: {
+        N: 'کریمی;سمیرا;;;',
+        FN: 'سمیرا کریمی - مدیر مالی پیشگام چاپ',
+        TITLE: 'مدیر مالی',
+        TEL: '+989127652284',
+        filename: 'SamiraKarimi_PishgamChap.vcf'
+    },
+    // *** شخص جدید ۲ ***
+    seyedAliFatemi: {
+        N: 'فاطمی;سید علی;;;',
+        FN: 'سید علی فاطمی - فروش پیشگام چاپ',
+        TITLE: 'فروش',
+        TEL: '+989122769567',
+        filename: 'SeyedAliFatemi_PishgamChap.vcf'
     }
 };
 
@@ -360,7 +404,7 @@ function downloadVcf(personKey) {
     const company = companyInfo;
     
     // ساخت VCF کامل: نام، شماره، سمت، شرکت، شماره دفتر، وبسایت، اینستاگرام
-    const vcard = 
+    const vcard =    
 `BEGIN:VCARD
 VERSION:3.0
 N:${data.N}
@@ -398,69 +442,57 @@ document.querySelectorAll('.save-individual-btn').forEach(button => {
 });
 
 
-// **کد ذخیره همه (باقی می‌ماند):**
+// *** کد ذخیره همه (بازنویسی شده برای پشتیبانی پویا از همه مخاطبین) ***
 document.getElementById('saveAllBtn').addEventListener('click', () => {
-  const vcardAll = 
+    
+    let vcardAllContent = "";
+    const company = companyInfo;
+
+    // ترتیب ذخیره سازی همه، مطابق با ترتیب نمایش در صفحه
+    const orderedKeys = [
+        'ahmadfotouhi', 
+        'taghimostafania', 
+        'hazratrahimi', 
+        'alisasani', 
+        'omidkhajenouri',
+        'samiraKarimi', // <-- جدید
+        'seyedAliFatemi'  // <-- جدید
+    ];
+
+    orderedKeys.forEach(key => {
+        const data = contactsData[key];
+        if (!data) return; // اگر مخاطبی در دیتا وجود نداشت، رد شو
+
+        // ساخت VCF برای هر فرد (مشابه تابع ذخیره تکی)
+        let personVcard = 
 `BEGIN:VCARD
 VERSION:3.0
-N:فتوحی;احمد رضا;;;
-FN:احمد رضا فتوحی - مدیر کارخانه پیشگام چاپ
-ORG:پیشگام چاپ
-TITLE:مدیر کارخانه
-TEL;TYPE=CELL;TYPE=PREF:+989121467833
-TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
-URL;TYPE=WEBSITE:http://www.pishgamchap.com
-URL;TYPE=INSTAGRAM:https://www.instagram.com/pishgam.chap
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-N:مصطفی نیا;تقی;;;
-FN:تقی مصطفی نیا - مدیر عامل پیشگام چاپ
-ORG:پیشگام چاپ
-TITLE:مدیر عامل
-TEL;TYPE=CELL;TYPE=PREF:+989127789929
-TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-N:رحیمی;حضرت قلی;;;
-FN:حضرت قلی رحیمی - رئیس هیات مدیره پیشگام چاپ
-ORG:پیشگام چاپ
-TITLE:رئیس هیات مدیره
-TEL;TYPE=CELL;TYPE=PREF:+989121058504
-TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-N:ساسانی;علی;;;
-FN:علی ساسانی - مدیر تولید و فروش پیشگام چاپ
-ORG:پیشگام چاپ
-TITLE:مدیر تولید و فروش
-TEL;TYPE=CELL;TYPE=PREF:+989121968991
-TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
-END:VCARD
-BEGIN:VCARD
-VERSION:3.0
-N:خواجه نوری;امید;;;
-FN:امید خواجه نوری - مسئول امور مشتریان پیشگام چاپ
-ORG:پیشگام چاپ
-TITLE:مسئول امور مشتریان
-TEL;TYPE=CELL;TYPE=PREF:+989121122868
-TEL;TYPE=WORK;TYPE=VOICE:+982146812806 ; دفتر
-END:VCARD`;
+N:${data.N}
+FN:${data.FN}
+ORG:${company.ORG}
+TITLE:${data.TITLE}
+TEL;TYPE=CELL;TYPE=PREF:${data.TEL} ; شماره موبایل فرد
+TEL;TYPE=WORK;TYPE=VOICE:${company.OFFICE_TEL} ; شماره دفتر مشترک
+URL;TYPE=WEBSITE:${company.WEBSITE}
+X-SOCIALPROFILE;TYPE=instagram:${company.INSTAGRAM}
+END:VCARD\n`; // \n برای جدا کردن VCARD ها
 
-  const blob = new Blob([vcardAll], {type:'text/vcard;charset=utf-8'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'PishgamChap_AllContacts.vcf';
-  document.body.appendChild(a);
-  a.click();
-  
-  setTimeout(() => {
-    URL.revokeObjectURL(url);
-    alert('۵ مخاطب به صورت یکجا ذخیره شدند!');
-  },1000);
+        vcardAllContent += personVcard;
+    });
+
+    const blob = new Blob([vcardAllContent], {type:'text/vcard;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'PishgamChap_AllContacts.vcf';
+    document.body.appendChild(a);
+    a.click();
+    
+    setTimeout(() => {
+        URL.revokeObjectURL(url);
+        // آپدیت پیام به تعداد کل مخاطبین (7)
+        alert('۷ مخاطب به صورت یکجا ذخیره شدند!');
+    }, 1000);
 });
 </script>
 
